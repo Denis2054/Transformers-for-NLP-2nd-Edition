@@ -29,23 +29,23 @@ If you want to learn about and apply transformers to your natural language (and 
 
 A good understanding of NLP, Python, and deep learning is required to benefit most from this book. Many platforms covered in this book provide interactive user interfaces, which allow readers with a general interest in NLP and AI to follow several chapters of this book.
 
-Table of Contents
-What are Transformers?
-Getting Started with the Architecture of the Transformer Model
-Fine-Tuning BERT models
-Pretraining a RoBERTa Model from Scratch
-Downstream NLP Tasks with Transformers
-Machine Translation with the Transformer
-The Rise of Suprahuman Transformers with GPT-3 Engines
-Applying Transformers to Legal and Financial Documents for AI Text Summarization
-Matching Tokenizers and Datasets
-Semantic Role Labeling with BERT-Based Transformers
-Let Your Data Do the Talking: Story, Questions, and Answers
-Detecting Customer Emotions to Make Predictions
-Analyzing Fake News with Transformers
-Interpreting Black Box Transformer Models
-From NLP to Task-Agnostic Transformer Models
-The Emergence of Transformer-Driven Copilots
-Appendix I: Terminology of Transformer Models
-Appendix II: Hardware Constraints for Transformer Models
-N.B. Additional chapters to be confirmed upon publication
+# Table of Contents<br>
+1.What are Transformers?<br>
+2.Getting Started with the Architecture of the Transformer Model<br>
+3.Fine-Tuning BERT models<br>
+4.Pretraining a RoBERTa Model from Scratch<br>
+5.Downstream NLP Tasks with Transformers<br>
+6.Machine Translation with the Transformer<br>
+7.The Rise of Suprahuman Transformers with GPT-3 Engines<br>
+8.Applying Transformers to Legal and Financial Documents for AI Text Summarization<br>
+9.Matching Tokenizers and Datasets<br>
+10.Semantic Role Labeling with BERT-Based Transformers<br>
+11.Let Your Data Do the Talking: Story, Questions, and Answers<br>
+12.Detecting Customer Emotions to Make Predictions<br>
+13.Analyzing Fake News with Transformers<br>
+14.Interpreting Black Box Transformer Models<br>
+15.From NLP to Task-Agnostic Transformer Models<br>
+16.The Emergence of Transformer-Driven Copilots<br>
+Appendix I: Terminology of Transformer Models<br>
+Appendix II: Hardware Constraints for Transformer Models<br>
+And more!
