@@ -5,7 +5,7 @@
 
 **Under the hood working of transformers, fine-tuning GPT-3 models, DeBERTa, vision models, and the start of Metaverse, using a variety of NLP platforms: Hugging Face, OpenAI API, Trax, and AllenNLP**
 
-##Key Features
+## Key Features
 
 Implement models, such as BERT, Reformer, and T5, that outperform classical language models<br>
 Compare NLP applications using GPT-3, GPT-2, and other transformers<br>
