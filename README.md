@@ -3,6 +3,8 @@
 
 @copyright 2022, Packt Publishing, Denis Rothman
 
+[Contact me for any question you have on LinkedIn](https://www.linkedin.com/in/denis-rothman-0b034043/)
+
 **Under the hood working of transformers, fine-tuning GPT-3 models, DeBERTa, vision models, and the start of Metaverse, using a variety of NLP platforms: Hugging Face, OpenAI API, Trax, and AllenNLP**
 
 ## Key Features
