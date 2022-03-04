@@ -1,0 +1,2307 @@
+This suggests that, as amoeboid cells are less contractile, while mesenchymal
+cells are more contractile, and there may be a switching between amoeboid and mesenchymal
+migration, perhaps there can also be a switching between the dominance of chemotaxis (amoeboid
+migration) and contact guidance (mesenchymal migration) [60]. One of the most interesting 2D
+platforms, allowing to study contact guidance and chemotaxis, was proposed in [57], in which the
+authors demonstrated an additive effect of chemical gradients and fiber alignment by measuring
+the persistence time; they also observed that cells were directed by fiber alignment and there was
+no effect of the chemical gradient when fibers were aligned perpendicular to it. A similar setting
+was also used for studying the dependence of contact guidance on the cell cycle [48]. However, In
+the case of different multi-directional cues, totally different scenarios may happen, e.g. in [51] it is
+shown that for contact guidance and electrotaxis in the cornea, electrotaxis wins when competing
+with the direction of alignment of the fibers.
+Multi-cue kinetic model with non-local sensing for cell
+migration on a fibers network with chemotaxis
+Martina Conte ∗ Nadia Loy †‡
+June 18, 2020
+Abstract
+Cells perform directed motion in response to external stimuli that they detect by sensing
+the environment with their membrane protrusions. In particular, several biochemical and biophysical cues give rise to tactic migration in the direction of their specific targets. This defines
+a multi-cue environment in which cells have to sort and combine different, and potentially
+competitive, stimuli. We propose a non-local kinetic model for cell migration in presence of
+two external factors both influencing cell polarization: contact guidance and chemotaxis. We
+propose two different sensing strategies and we analyze the two resulting models by recovering
+the appropriate macroscopic limit in different regimes, in order to see how the size of the cell,
+with respect to the variation of both external fields, influences the overall behavior. Moreover,
+we integrate numerically the kinetic transport equation in a two-dimensional setting in order
+to investigate qualitatively various scenarios.
+Keyword. Kinetic equations, multiscale modeling, multi-cue, non-local, hydrodynamic limit,
+cell migration, contact guidance, chemotaxis
+AMS subject classifications. 35Q20, 35Q92, 92B05, 45K05, 92C17
+1 Introduction
+Cell migration is a fundamental mechanism in a huge variety of processes, such as embryogenesis,
+wound healing, angiogenesis, immune response and tumor stroma formation and metastasis.
+During such processes, cells sense the environment and respond to external factors that induce
+a certain direction of motion towards specific targets (taxis): this results in a persistent migration
+in a certain preferential direction. The guidance cues leading to directed migration may be biochemical or biophysical. Biochemical cues can be, for example, soluble factors or growth factors
+that give rise to chemotaxis, which involves a mono-directional stimulus. Other cues generating mono-directional stimuli include, for instance, bound ligands to the substratum that induce
+haptotaxis, durotaxis, that involves migration towards regions with an increasing stiffness of the
+ECM, electrotaxis, also known as galvanotaxis, that prescribes a directed motion guided by an
+electric field or current, or phototaxis, referring to the movement oriented by a stimulus of light
+[34]. Important biophysical cues are some of the properties of the extracellular matrix (ECM),
+first among all the alignment of collagen fibers and its stiffness. In particular, the fiber alignment is shown to stimulate contact guidance [22, 21]. Contact guidance is a key mechanism in a
+number of in vivo situations in which cells tend to migrate crawling on the fibers, thus following
+∗BCAM - Basque Center for Applied Mathematics, Alameda de Mazarredo, 14, 48009 Bilbao, Spain
+(mconte@bcamath.org)
+†Department of Mathematical Sciences “G. L. Lagrange”, Politecnico di Torino, Corso Duca degli Abruzzi
+24, 10129 Torino, Italy, and Department of Mathematics “G. Peano”, Via Carlo Alberto 10, 10123 Torino, Italy
+(nadia.loy@polito.it)
+‡Corresponding author: nadia.loy@polito.it
+1
+arXiv:2006.09707v1 [q-bio.CB] 17 Jun 2020
+the directions imposed by the network structure of the ECM. This is a bi-directional cue, as, if
+the fibers network is not polarized, there is no preferential sense of migration along them. For
+example, during wound healing fibroblasts migrate efficiently along collagen or fibronectin fibers
+in connective tissues; in cancer spread and metastasis formation, cancer cells migrate through the
+stromal tissue and are thus facilitated to reach blood and lymphatic vessels [55, 49, 50].
+In many processes there are several directional cues that may induce different simultaneous
+stimuli. While the cell response to each of them has been largely studied, from both an intracellular
+and a migrative point of view, cell responses to a multi-cue environment are much less understood.
+The fundamental issue is the way cells rank, integrate or hierarchize multiple cues, in particular
+when these give conflicting stimuli, because, for example, they are not co-aligned [51]. Some
+studies have shown that there may be competition or cooperation between different stimuli in
+the directional response of a cell in a multi-cue environment. Considering the angle between the
+relative orientation of the directional cues, in the mono-directional case they compete when this
+angle is π, whereas they collaborate when this angle is 0. Bi-directional cues, such as contact
+guidance, compete when the angle is π/2. Then, many intermediate scenarios may happen and
+guidance stimuli submit or prevail according to other factors, among all their average concentration
+and intensity, that relates to the steepness of the gradient for taxis processes and to the degree
+of alignment for contact guidance. In particular, regarding the external environment, the average
+value of the directional cue (fiber density, molecule concentration, etc.) and the steepness of
+the gradient, or the degree of fiber alignment, are fundamental parameters that can be quantified.
+While, for cell migration, the angle between the polarization direction and the preferential direction
+imposed by the guidance cue can be measured, as well as the displacement, the mean squared
+displacement and the persistence time [15]. However, in general, when cues are aligned, a simple
+additive mechanism is not what governs multi-cue migration [34], even if it is weighted by the
+average cue concentrations or intensities.
+In the framework of kinetic models, in the present paper we will focus on how the environmental
+sensing of two different stimuli over a finite radius can influence the choice of the direction of
+motion of a cell. In particular, we combine chemotaxis, a mono-directional biochemical cue, with
+contact guidance, defining the new orientation of the cells as a result of the sensing of the two
+cues over a finite neighborhood, that gives a non-local character to the model. In particular,
+the combination of chemotaxis and contact-guidance happens in vivo in a variety of situations,
+for example in wound healing and in breast cancer. In wound healing, fibers guide cells towards
+the provisional clot, whilst in breast cancer cells follow the aligned fibers at the tumor-stroma
+interface for migrating out of the primary tumor. Chemotaxis accelerates and enhances these
+processes [34, 6, 49, 50]. Therefore, a deep understanding of multi-cue migrational responses is a
+key step for the comprehension of both physiologic and pathologic processes, but also for building
+engineered tissues, as their structure is realized for guiding cell migration in a focused way [34].
+There are not many experimental studies concerning chemotaxis and contact guidance, as well
+as other combinations of directional guidances cues [34]. One of the main reasons is the difficulty in
+designing environments for controlling multiple directional cues, in particular soluble factors and
+aligned fibers and fibrous materials. For example, in one of the first works studying in vitro contact
+guidance of neutrophil leukocytes on fibrils of collagen [59], it is shown that migration is more
+efficient in the direction of alignment, instead of in the perpendicular direction; in the presence
+of chemotaxis, obtained by adding a chemoattractant, they observe that these cues cooperate or
+compete in dependence on their relative orientation. In particular, the chemotactic response is
+lower for cells trying to cross fibers in the perpendicular direction. In [6], it is shown that alignment
+along the fibers is greater in presence of a co-aligned chemoattractant. In [38], the authors study
+how multiple uniformly distributed cues quantitatively regulate random cell migration. One of the
+latest works concerning the competition between chemotaxis and contact guidance shows that less
+contractile cells are dominated by chemotaxis, while contact guidance might dominate in more
+contractile cells [52]. This suggests that, as amoeboid cells are less contractile, while mesenchymal
+cells are more contractile, and there may be a switching between amoeboid and mesenchymal
+migration, perhaps there can also be a switching between the dominance of chemotaxis (amoeboid
+migration) and contact guidance (mesenchymal migration) [60]. One of the most interesting 2D
+2
+platforms, allowing to study contact guidance and chemotaxis, was proposed in [57], in which the
+authors demonstrated an additive effect of chemical gradients and fiber alignment by measuring
+the persistence time; they also observed that cells were directed by fiber alignment and there was
+no effect of the chemical gradient when fibers were aligned perpendicular to it. A similar setting
+was also used for studying the dependence of contact guidance on the cell cycle [48]. However, In
+the case of different multi-directional cues, totally different scenarios may happen, e.g. in [51] it is
+shown that for contact guidance and electrotaxis in the cornea, electrotaxis wins when competing
+with the direction of alignment of the fibers.
+There is a huge variety of mathematical models concerning cell migration. They range from
+microscopic models (also called individuals based models), that describe migration at the cell
+level, up to macroscopic ones, that describe collective cell-migration at a tissue level. There are
+many examples of individual based models regarding chemotaxis ([14, 23] and references therein)
+and migration on the ECM [11, 54, 53]. Concerning macroscopic models, first among all the
+famous Keller and Segel model is a drift-diffusion model postulated at the macroscopic level
+[29]. Many efforts were made in order to encompass the defects of the Keller and Segel model,
+as well as for deriving it from lower scale models (see [30, 27, 40, 41] and references therein).
+Between microscopic and macroscopic models there are mesoscopic models that are an intermediate
+representative scale, as they include microscopic dynamics and describe the statistical distribution
+of the individuals. They also allow, for instance in the case of kinetic theory, to recover the
+appropriate macroscopic regime which inherit some details of the microscopic dynamics, thus
+giving more significance to some of the parameters [40]. Some examples are [12, 7, 17]. The two
+major models for contact guidance at the mesoscopic level were proposed in [24] and [16], both
+local models in the physical space. Concerning multiple cues, not many models exist. In [31], the
+authors propose a macroscopic drift-diffusion model derived from a space jump process in which
+they include the response to multiple chemicals. A recent review for macroscopic PDEs including
+multiple-taxis has been proposed in [32]. In [58], the authors propose one of the first models for
+both contact guidance and chemotaxis, derived from a microscopic dynamics description. In a
+recent work [1], the authors propose a microscopic stochastic model for studying contact guidance
+and add chemotaxis in order to study migration at the tumor-stroma interface for classifying TACS
+(tumor associated collagen signature). In [8], a kinetic model for cell-cell interactions on a fibers
+network in presence of a tactic cue is considered. In [36, 37], the authors propose a non-local
+kinetic model with a double biasing cue: the first one affecting the choice of the direction and
+the second one affecting the speed, including, through the non-locality, the sensing of macroscopic
+quantities performed by the cell, that depends on the cell size, i.e., on its maximum protrusion
+length.
+As already stated, in this paper we want to include chemotaxis and contact guidance as directional cues guiding cell polarization. In particular, we analyze two possible sensing strategies
+that a cell could apply for exploring the neighborhood around, and that determine the choice
+for the transition probability for the transport model. The cell can measure the guidance cues
+independently, and, then, choose the new orientation using the collected information, eventually
+weighted in different ways. Otherwise, it can measure the two directional stimuli, weighting them
+equally, and assuming a conditioning of one cue on the other. Therefore, cell response is related to
+the choice of the sensing strategy, and the macroscopic overall effect of the two cues would also be
+affected. Moreover, we shall consider for the first time a non-local sensing of the fibers distribution
+defined at a mesoscopic level; this allows for many intermediate scenarios in the analysis about
+the collaborative or competitive effect of the cues. For a better understanding, we discuss how
+the choices made on the transition probability, together with the size of the sampling volume and
+the characteristics of the two cues determine the macroscopic behavior. Specifically, in section
+2, we shall present the mathematical framework, while in section 3 we shall introduce the two
+classes of models, that describe the different strategies for the sensing of a double cue, along with
+the corresponding macroscopic limits in various regimes, depending on the cell size and on the
+variability of the external cues. In section 4, some numerical simulations of the kinetic models will
+be presented for investigating qualitatively various scenarios in a two-dimensional setting.
+3
+2 Mathematical framework
+2.1 The transport model
+The cell population will be described at a mesoscopic level through the distribution density p =
+p(t, x, v, vˆ) that, for every time t > 0 and position x ∈ Ω ⊆ R
+d
+, gives the statistical distribution
+of the speeds v ∈ [0, U], where U is the maximal speed a cell can achieve, and of the polarization
+directions vˆ ∈ S
+d−1
+, being S
+d−1
+the unit sphere boundary in R
+d
+. The velocity vector, thus, will
+be given by v = vvˆ.
+Then, a macroscopic description for the cell population can be classically recovered through
+the definition of moments of the distribution function p. In particular, we recover the cell number
+density ρ(t, x)
+ρ(t, x) = Z
+S
+d−1
+Z U
+0
+p(t, x, v, vˆ) dv dvˆ (1)
+the momentum
+ρ(t, x)U(t, x) = Z
+S
+d−1
+Z U
+0
+v p(t, x, v, vˆ) dv dvˆ (2)
+the cell mean velocity
+U(t, x) = 1
+ρ(t, x)
+Z
+S
+d−1
+Z U
+0
+v p(t, x, v, vˆ) dv dvˆ (3)
+and the energy tensor
+D(t, x) = Z
+S
+d−1
+Z U
+0
+(v − U) ⊗ (v − U) p(t, x, v, vˆ) dv dvˆ. (4)
+The mesoscopic model consists in the transport equation for the cell distribution
+∂p
+∂t(t, x, v, vˆ) + v · ∇p(t, x, v, vˆ) = J [p](t, x, v, vˆ) (5)
+where the operator ∇ denotes the spatial gradient, so that the term v·∇p takes into account the free
+particle transport. The term J [p](t, x, v, vˆ) is the turning operator that describes the scattering of
+the microscopic velocity in direction and speed. This is related to the typical microscopic dynamics
+of the cell, that is the run and tumble [5, 2]. The run and tumble prescribes an alternation of
+runs over straight lines and re-orientations: the choice of the new direction may be random or it
+may be biased by the presence of external factors, that may attract or repel the cell as well as
+increase the time spent in a run. The run and tumble is classically modeled by a scattering of the
+microscopic velocity called velocity jump process [56], characterized by a turning frequency µ and
+a transition probability T. The general form of the turning operator which implements a velocity
+jump process at a kinetic level is given by
+J [p](x, v, vˆ) =µ(x)
+Z
+S
+d−1
+Z U
+0
+h
+T(x, v, vˆ|v
+0
+, vˆ
+0
+)p(t, x, v0
+, vˆ
+0
+) − T(x, v0
+, vˆ
+0
+|v, vˆ)p(t, x, v, vˆ)
+i
+dv0
+dvˆ
+0
+(6)
+where we assumed that the turning frequency does not depend on the microscopic velocity. The
+transition probability T(x, v, vˆ|v
+0
+, vˆ
+0
+) is also called turning kernel and it is a conditional probability
+satisfying, ∀x ∈ Ω,
+Z
+S
+d−1
+Z U
+0
+T(x, v, vˆ|v
+0
+, vˆ
+0
+)dvdvˆ = 1 , ∀v
+0 ∈ [0, U], vˆ
+0 ∈ S
+d−1
+. (7)
+Thanks to this property, the operator (6) reads
+J [p](t, x, v, vˆ) = µ(x)
+ Z
+S
+d−1
+Z U
+0
+T(x, v, vˆ|v
+0
+, vˆ
+0
+)p(t, x, v0
+, vˆ
+0
+) dv0
+dvˆ
+0 − p(t, x, v, vˆ)
+!
+.
+4
+For our purposes, we shall assume that the transition probability only depends on the posttumbling velocity
+T(x, v, vˆ|v
+0
+, vˆ
+0
+) = T(x, v, vˆ) (8)
+as classically done in the pioneering work concerning kinetic equations for velocity jump processes
+[56, 42, 24]. This assumption, along with the assumption on the turning frequency, is due to the
+fact that we shall consider directional cues which are sensed non-locally, and, therefore, the most
+relevant aspect will be the measured preferential direction instead than the incoming velocity. The
+latter (8) allows to write the turning operator as
+J [p](t, x, v, vˆ) = µ(x)
+
+ρ(t, x)T(x, v, vˆ) − p(t, x, v, vˆ)
+
+. (9)
+The mean macroscopic velocity after a tumble is given by the average of T
+UT (x) = Z
+S
+d−1
+Z U
+0
+v T(x, v, vˆ) dv dvˆ (10)
+and the diffusion tensor by the variance-covariance matrix
+DT (x) = Z
+S
+d−1
+Z U
+0
+T(x, v, vˆ)(v − UT ) ⊗ (v − UT )dv dvˆ. (11)
+Arguing as in [46, 4], we can prove a linear version of the classical H-Theorem for the linear
+Boltzmann equation (5)-(9) with p
+0 = p(0, x, v, vˆ) ∈ L
+1
+(Ω × [0, U] × S
+d−1
+). In particular the
+Maxwellian
+M(x, v, vˆ) = ρ
+∞(x)T(x, v, vˆ),
+making the turning operator vanish, is the local asymptotic stable equilibrium of the system. As
+already remarked by [36], this implies that T is the local asymptotic equilibrium steady state of
+the system. Therefore UT and DT are the mean velocity and diffusion tensor of the cell population
+at equilibrium.
+2.2 Boundary conditions
+Since we are going to consider two-dimensional bounded domains without loss of cells and no
+cells coming in, we shall assume conservation of mass. Therefore, we will require that the chosen
+boundary condition is no-flux [47]
+Z
+S
+d−1
+Z U
+0
+p(t, x, v, vˆ)vˆ · n(x) dv dvˆ = 0, ∀x ∈ ∂Ω, t > 0 , (12)
+being n(x) the outward normal to the boundary ∂Ω in the point x. This class of boundary
+conditions is part of the wider class of non-absorbing boundary conditions. Denoting the boundary
+operator as
+R[p](t, x, v, vˆ) = p(t, x, v0
+, vˆ
+0
+),
+there are two important classes of kinetic boundary conditions which satisfy (12): the regular
+reflection boundary operators and the non-local (in velocity) boundary operators of diffusive type.
+We address the reader to the works [45] and [35] for the definition of these boundary operators.
+In the present work, we shall consider specular reflection boundary conditions
+p(t, x, v0
+, vˆ
+0
+) = p
+
+t, x, v,
+vˆ − 2(vˆ · n)n
+|vˆ − 2(vˆ · n)n|
+
+, n · vˆ ≤ 0, (13)
+that means that cells are reflected with an angle of π/2 when they hit the wall.
+5
+2.3 Macroscopic limits
+In order to investigate the overall trend of the system, the macroscopic behavior is typically
+analyzed. By integrating Eq. (5) with (9) on S
+d−1 × [0, U], thanks to Eq. (7), we have that
+∂tρ(t, x) + ∇ · (ρ(t, x)U(t, x)) = 0 ,
+i.e., the mass is conserved pointwise and in the entire domain, because of no-flux boundary
+conditions (after integration on Ω). If we multiply Eq. (5) with (9) by vvˆ, and we then integrate
+the result on S
+d−1 × [0, U], we see that the momentum is not conserved
+∂tρ(t, x)U(t, x) + ∇ · (ρ(t, x)DT (t, x)) = µ(x) (ρ(t, x)UT (x) − ρ(t, x)U(t, x)).
+We can observe that, if we multiply the transport equations by increasing orders n of power of
+v and, then, we integrate on the velocity space, we obtain a non-closed system of macroscopic
+equations, since the equations describing the evolution of n
+th moment of p contain the (n + 1)th
+moment. Therefore, we need some procedures to obtain a closed evolution equation (or system of
+equations) for the macroscopic quantities. In particular, we are interested in the evolution of ρ(t, x)
+in the emerging regime of the system. Therefore, we shall consider a diffusive or a hydrodynamic
+scaling of the transport equation (5) with (9), resulting from a proper non-dimensionalization
+of the system. Diffusive and hydrodynamic limits for transport equations with velocity jump
+processes have been widely treated in [26, 40, 24, 36]. Formally, we introduce a small parameter
+  1 and we re-scale the spatial variable as
+ξ = x, (14)
+being ξ the macroscopic spatial variable. According to the other characteristic quantities of the
+system of study, the macroscopic time scale τ will be
+τ = 
+2
+t, (15)
+that is the parabolic scaling representing a diffusion dominated phenomenon, or
+τ = t, (16)
+that is the hyperbolic scaling that represents a drift driven phenomenon. Up to the spatial scaling
+(14), we have that the transition probability may be expanded as
+T(ξ, v, vˆ) = T0(ξ, v, vˆ) + T1(ξ, v, vˆ) + O(
+2
+).
+Therefore, the corresponding means and diffusion tensors will be given by
+Ui
+T
+(ξ) = Z
+S
+d−1
+Z U
+0
+Ti(ξ, v, vˆ)v dvdvˆ (17)
+and
+D
+i
+T
+(ξ) = Z
+S
+d−1
+Z U
+0
+Ti(ξ, v, vˆ)(v − Ui
+T
+) ⊗ (v − Ui
+T
+)dv dvˆ . (18)
+Considering a Hilbert expansion of the distribution function p
+p = p0 + p1 + O(
+2
+), (19)
+if there is conservation of mass, we have that all the mass is in p0 [26], i.e.,
+ρ0 = ρ, ρi = 0 ∀i ≥ 1 , (20)
+where ρi =
+Z
+S
+d−1
+Z U
+0
+pi dv dvˆ. Furthermore, for performing the diffusive limit we shall assume
+that Z
+S
+d−1
+Z U
+0
+pi v dv dvˆ = 0 ∀i ≥ 2 [26].
+6
+The functional solvability condition that is necessary for performing a diffusive limit (i.e., for
+choosing τ = 
+2
+t) is
+U0
+T = 0, (21)
+meaning that the leading order of the drift vanishes, which is coherent with the fact that the time
+scale τ = 
+2
+t is chosen because the phenomenon macroscopically is diffusion-driven. The diffusive
+limit procedure prescribes to re-scale (5)-(9) with (14)-(15) and to insert (19) in the re-scaled
+equation. By comparing equal order of , we obtain the macroscopic diffusive limit, given by
+(dropping the dependencies)
+∂
+∂τ ρ + ∇ ·
+U1
+T ρ
+
+= ∇ · 
+1
+µ
+∇ ·
+D
+0
+T ρ
+
+
+, (22)
+being
+D
+0
+T
+(ξ) = Z
+S
+d−1
+Z U
+0
+T0(ξ, v, vˆ)v ⊗ v dvdvˆ
+the diffusion motility tensor. Equation (22) is a diffusion-advection equation, where U1
+T
+is the
+drift velocity of first order. If (21) does not hold, a hyperbolic scaling is required, that gives
+∂
+∂τ ρ + ∇ ·
+ρU0
+T
+
+= 0 . (23)
+This is an advection equation modeling a drift driven phenomenon. We address the reader to [36]
+for further details.
+Concerning the boundary conditions, at the macroscopic level (12) gives [47]
+
+DT ∇ρ − ρU1
+T
+
+· n = 0, on ∂Ω,
+for the diffusive limit, whilst for the hyperbolic limit the corresponding boundary condition is
+U0
+T
+· n = 0, on ∂Ω .
+3 A mathematical model for chemotaxis on a fibers network
+In this section, we shall introduce the transition probability modeling a decision process of a cell in
+presence of a double directional guidance cue: a fibrous ECM and a chemoattractant. In particular,
+we shall consider amoeboid cells [60] moving by contact guidance without proteolysis: cells hit
+the fiber and then move along the direction of the fiber itself. It has been shown experimentally,
+for example in the case of glioma cancer cells [28], that randomly disposed fibers imply isotropic
+diffusion of cells, while aligned fibers cause anisotropic diffusion of cells along the preferential
+direction of the fibers themselves. The first transport model for contact guidance was proposed by
+[24], further studied and developed by [43, 8, 9] and applied to the study of glioma by [44, 20, 19,
+13, 18]. The model proposed by [24] prescribes a distribution of fibers on the space of directions,
+given by the unit sphere in R
+n,
+q = q(x, vˆ), x ∈ Ω, vˆ ∈ S
+d−1
+(24)
+that satisfies
+Q1: q(x, vˆ) > 0, ∀x ∈ Ω, vˆ ∈ S
+d−1
+Q2: Z
+S
+d−1
+q(x, vˆ) dvˆ = 1, ∀x ∈ Ω
+Q3: q(x, vˆ) = q(x, −vˆ), ∀x ∈ Ω, vˆ ∈ S
+d−1
+,
+where the last condition means that we are considering a non-polarized network of fibers, so that
+cells are able to go in both senses in every direction. Being, then, q(x, vˆ) a probability density, we
+can define the mean direction of the fibers
+Eq(x) = Z
+S
+d−1
+q(x, vˆ) vˆ dvˆ, (25)
+and the diffusion tensor of the fibers, given by the variance-covariance matrix of q
+Dq(x) = Z
+S
+d−1
+q(x, vˆ) (vˆ − Eq) ⊗ (vˆ − Eq) dvˆ . (26)
+As we consider a non polarized fibers network, we have that
+Eq(x) = 0, (27)
+meaning that there is no mean direction in the dynamics. The tensor (26) is symmetric and
+positive definite, when q is a regular probability distribution, and, thus, it is diagonalizable. Each
+eigenvalue represents the diffusivity in the direction of the corresponding eigenvector, meaning
+that, if the eigenvalues are equal, there is isotropic diffusion, while, if they are different, there is a
+preferential direction of motion, i.e. anisotropy. Therefore, the model introduced in [24], as shown
+in [43], allows to reproduce isotropic/anisotropic diffusion on a non-polarized fibers network.
+Concerning chemotaxis, we shall consider a chemoattractant in the region Ω defined by a
+strictly positive definite function
+S = S(x) : Ω 7−→ R+. (28)
+We consider that the sensing performed by the cells is non-local, as they may extend their
+protrusions, through which they sense the environment, up to several cell diameters [3]. The
+maximum length R of a protrusion is called sensing radius and it has been first introduced in
+[40] for modeling a non-local gradient of a chemical and, then, used in a number of works (see
+[10] for a review and references therein) for describing the sensing of macroscopic quantities. In
+particular, in [36] and, later, in [37] the authors propose a double bias model, in which two cues
+are sensed non-locally and they affect cell polarization and speed. In the present work we shall
+drop the sensing of a cue that affects the speed, that will be unbiased, and we will extend the
+model proposed in [36] to a double sensing of cues affecting the polarization of the cell.
+Therefore, in the model both S and q will be sensed non-locally by a cell that, starting from
+its position x, extends its protrusions in every direction vˆ ∈ S
+d−1 up to the distance R, given by
+the sensing radius. In particular, assuming a non-local sensing of the fibers network will allow to
+reproduce a wider range of migration strategies, that a cell can perform in order to cleverly reach
+the chemoattractant, with respect to a local sensing. Therefore, we shall consider the quantities
+S(x + λvˆ), q(x + λvˆ, vˆ), ∀ x ∈ Ω, ∀ vˆ ∈ S
+d−1
+, λ ≤ R.
+Of course, next to the border of the domain Ω, we shall always consider λ such that x + λvˆ ∈ Ω.
+In order to analyze qualitatively the impact of the non-locality at the macroscopic level, we
+study, as previously done in [36, 37], the impact of the directional cues S and q with respect to
+the size of the cell, that is related to its sensing radius R. Thus, we introduce the characteristic
+length of variation of S as
+lS :=
+1
+max
+x∈Ω
+|∇S|
+S
+. (29)
+It allows to approximate S(x + λvˆ) with a positive quantity
+S(x + λvˆ) ∼ S(x) + λ∇S · vˆ ≥ 0 ∀λ ≤ R if R < lS (30)
+where we neglected higher order terms in λ. Beside the above defined characteristic length of
+variation of the chemoattractant lS , we define an analogue quantity for the fibers distribution. We
+choose
+lq :=
+1
+max
+x∈Ω
+max
+vˆ∈S
+d−1
+|∇q·vˆ|
+q
+. (31)
+8
+In this case, we can approximate q(x + λvˆ, vˆ) with a positive quantity
+q(x + λvˆ, vˆ) ∼ q(x, vˆ) + λ∇q · vˆ ≥ 0 ∀λ < R if R < lq . (32)
+In particular, this definition of lq takes into account the variation of directionality of the fibers
+in space, that is what actually influences the cell orientation, more than spatial variation of the
+density of the extracellular matrix. We analyze the possible scenarios depending on the relation
+between R, lS and lq.
+In analogy to [36], let us now introduce the parameters
+ηq :=
+R
+lq
+(33)
+and
+ηS :=
+R
+lS
+, (34)
+that quantify the capability of measuring of the cell with respect to the characteristic lengths of
+variation of the sensed guidance cues q and S. In particular, ηi < 1, i = q, S, means that the
+sensing radius is smaller than the characteristic length of variation of q (S, respectively) and the
+idea is that a single instantaneous sensing of the cell is not capable of catching the total spatial
+variability of q (S, respectively), while if ηi > 1, i = q, S, the sensing radius is large enough in
+order to capture the spatial variability of q (S, respectively). If we consider the two cues separately,
+in the first case we expect that the sensing of q (S, respectively) induces a diffusive behavior, while
+in the second scenario the overall behavior induced by q (S, respectively) is drift-driven.
+As we are considering the two guidance cues simultaneously affecting cell polarization, we now
+take into account for limit cases:
+i) ηq, ηS  1;
+ii) ηq, ηS  1;
+iii) ηS  1, ηq  1;
+iv) ηS  1, ηq  1.
+In case i), a Taylor expansion cannot be used, since there is no guarantee that the first order
+approximations are positive, as well as in case iii) and iv) for q and S, respectively.
+In order to quantify the relative contribution of chemotaxis to contact guidance, we may
+introduce the parameter
+η =
+ηq
+ηS
+(35)
+that is larger than 1 if contact guidance prevails, whilst it is smaller then 1 if chemotaxis is
+stronger. Due to (33) and (34), we have that, despite its definition, η does not depend on the size
+and sensing capability of the cell, as η =
+ηq
+ηS
+=
+lS
+lq
+. In particular, if lS is larger than lq, i.e. η > 1,
+it means that the gradient of q is steeper than the one of S, thus enhancing a stronger effect of
+contact guidance on the dynamics. We may also observe that in case iii) we have always that
+η > 1 while in case iv) we always have η < 1, i.e. contact guidance is weaker then chemotaxis.
+We shall propose two different transition probabilities describing two different sensing strategies: in the first model the sensings of q and S are independent, while in the second model a
+unique sensing is performed. In the first model, we shall introduce a transition probability that is
+the product of two different independent sensings
+T[q, S](x, v, vˆ) = c(x)
+Z
+R+
+γS (λ)S(x + λvˆ) dλ Z
+R+
+γq(λ) q(x + λvˆ, vˆ) dλ ψ(v). (36)
+In this case the cell located in position x measures along the direction vˆ the field S(x+λvˆ) weighted
+by γS , and, independently, the quantity q(x + λvˆ, vˆ), weighted by γq. The sensing functions γS
+9
+and γq have compact support in [0, R] and they may be Dirac deltas centered in R, if the cell only
+measures the guidance cues on its membrane (only on x + Rvˆ for every vˆ), or Heaviside functions
+if the cell measures and gives the same weight to q and S from x to x + Rvˆ in every direction.
+Formally the transition probability might be seen as the product of the independent probabilities
+of q and S, i.e. T[q, S] = Tˆ[q] Tˆ[S].
+The second model prescribes a simultaneous averaging of the guidance cues S and q, i.e.,
+T[q, S](x, v, vˆ) = c(x)
+Z
+R+
+γ(λ)S(x + λvˆ) q(x + λvˆ, vˆ)dλ ψ(v). (37)
+This transition probability describes a cells in position x that measures in the direction vˆ the two
+quantities S(x + λvˆ) and q(x + λvˆ), weighting both with γ, that is a sensing function. Formally,
+as the two sensing are not independent and, therefore, factorized, we have a conditioning of S
+given q and viceversa, i.e., T[q, S] = T˜[S|q] T˜[q] = T˜[q|S] T˜[S].
+In (36) and (37), c(x) is a normalization coefficient. Moreover the probability density ψ is the
+distribution of the speeds on the interval [0, U] and satisfies
+Z U
+0
+ψ(v)dv = 1 .
+We introduce its mean speed
+U¯ =
+Z U
+0
+v ψ(v) dv (38)
+and the second moment
+D =
+Z U
+0
+v
+2 ψ(v) dv , (39)
+such that the variance of ψ is given by σ
+2
+ψ =
+1
+2
+(D − U¯ 2
+).
+We shall refer to the transport model (5)-(9) with (36) as non-local independent sensing model,
+in which the cell averages the two cues independently according to two different sensing functions
+γq, γS . On the other hand, the transport model (5)-(9) with (37) is defined as non-local dependent
+sensing model, describing cells that sense the two cues at the same time and average them with a
+unique sensing kernel γ. In the next sections we shall analyze the macroscopic limits for the two
+models in the scenarios i) − iv) and we shall compare the two models.
+3.1 Amoeboid motion and chemotaxis: non-local independent sensing
+We first consider the non-local independent sensing case (5)-(9) with (36). We recall the expression
+of the transition probability
+T[q, S](x, v, vˆ) = c(x)
+Z
+R+
+γS (λ)S(x + λvˆ) dλ Z
+R+
+γq(λ) q(x + λvˆ, vˆ) dλ ψ(v).
+The average of T, that will be the equilibrium velocity of the cell population, is given by
+UT (x) = c(x)U¯
+Z
+S
+d−1
+vˆ
+ Z
+R+
+γS (λ)S(x + λvˆ) dλ Z
+R+
+γq(λ) q(x + λvˆ, vˆ) dλ!
+dvˆ . (40)
+Case i) In this case, we shall choose
+ = min 
+1
+ηq
+,
+1
+ηS
+
+.
+10
+As a consequence of the fact that T cannot be expanded in powers of  after re-scaling with (14),
+we have that U0
+T = UT given by (40). Therefore, we have to perform a hyperbolic scaling that
+leads to the following macroscopic equation for the cells macroscopic density:
+∂
+∂τ ρ(τ, ξ) + ∇ · (ρ(τ, ξ)UT (ξ)) = 0 , (41)
+with UT (ξ) given by the re-scaling of (40) with (14).
+Case ii) In this case, we can expand both S(x + λvˆ) and q(x + λvˆ, vˆ) and consider the approximations (30) and (32) for λ < min{lq, lS }. Therefore, we approximate the transition probability
+by substituting (30) and (32) in (36), and, thus, we obtain the following approximation for the
+turning kernel T[q, S], that reads
+T[q, S](x, v, vˆ) =c(x)
+h
+Γ
+S
+0 Γ
+q
+0 S(x) q(x, vˆ) + ΓS
+0 Γ
+q
+1 S(x) ∇q · vˆ + ΓS
+1 Γ
+q
+0
+q(x, vˆ) ∇S · vˆ
+i
+ψ(v) (42)
+where we neglected higher orders terms in λ. In the latter
+c(x) = 1
+S(x) ΓS
+0 Γ
+q
+0
+and
+Γ
+S
+i
+:= Z
+R+
+λ
+i
+γS (λ) dλ i = 0, 1
+Γ
+q
+i
+:= Z
+R+
+λ
+i
+γq(λ) dλ i = 0, 1 .
+The quantities Γq
+0
+, Γ
+S
+0 are the weighted (by γq, γS ) measures of the sensed linear tracts in every
+direction, whilst Γq
+1
+, Γ
+S
+1 are the averages of γq, γS on [0, R].
+We can, then, introduce the small parameter
+ = min{ηq, ηS } (43)
+and re-scale the space variable as ξ = x, getting
+T0[q, S](ξ, v, vˆ) = q(ξ, vˆ)ψ(v), (44)
+meaning that the equilibrium is determined by the fibers distribution, and
+T1[q, S](ξ, v, vˆ) = 
+Γ
+q ∇q · vˆ + ΓS
+q(ξ, vˆ)
+∇S
+S(ξ)
+· vˆ
+
+ψ(v)
+where
+Γ
+S
+:=
+Γ
+S
+1
+Γ
+S
+0
+, Γq
+:=
+Γ
+q
+1
+Γ
+q
+0
+.
+Because of (27) and (44), we have that UT
+0
+(ξ) = 0, meaning that we are in a diffusive regime,
+and the diffusive limits leads to the advection-diffusion equation (22). The explicit form for the
+zero-order macroscopic diffusion tensor is
+D
+0
+T
+(ξ) = D
+Z
+S
+d−1
+q(ξ, vˆ)vˆ ⊗ vˆ dvˆ = D Dq(ξ), (45)
+and for the macroscopic first-order velocity is
+U1
+T
+(ξ) = U¯
+Z
+S
+d−1
+
+Γ
+q ∇q · vˆ + ΓS ∇S
+S(ξ)
+· vˆ q(ξ, vˆ)
+
+vˆdvˆ
+= U¯ Γ
+q
+Z
+S
+d−1
+(∇q · vˆ) vˆdvˆ + U¯ Γ
+S ∇S
+S
+Z
+S
+d−1
+vˆ ⊗ vˆ q(ξ, vˆ)dvˆ
+= U¯
+
+Γ
+q ∇ · Dq + ΓS Dq
+∇S
+S
+
+.
+(46)
+11
+Therefore, the diffusion-advection equation (22) reads (dropping the dependencies)
+∂
+∂τ ρ + ∇ · χ
+S Dq∇S + χ
+q∇ · Dq
+
+ρ
+
+= ∇ · 
+1
+µ
+∇ ·
+D Dq ρ
+
+
+, (47)
+where
+χ
+S
+(ξ) := U¯ Γ
+S
+S(ξ)
+, χ
+q
+:= U¯ Γ
+q
+(48)
+are the sensitivities. The diffusion represented by the motility tensor of the cells (45) only depends
+on the fibers distribution, while the advective term has two contributions differently weighted by
+the sensitivities (48). We remark that, in this regime, we obtain the same macroscopic behavior
+postulated by Keller and Segel [29], with the logarithmic chemotactic sensitivity χS given in
+(48). The term Dq∇S depends on both the fibers distribution and the chemotactic field; it never
+vanishes if ∇S is not the null vector, since it may be proved that Dq is invertible. In the case
+of randomly disposed fibers, corresponding to the isotropic case, i.e., when Dq is proportional to
+the identity matrix, then Dq∇S is parallel to ∇S, that, thus, represents the anisotropy direction.
+On the other hand, when Dq is anisotropic, if ∇S is not parallel to the eigenvector corresponding
+to the highest eigenvalue of Dq, then the migration does not follow the dominant direction of the
+fibers, but rather its projection on ∇S. Moreover, the second contribution in the drift term, i.e.,
+∇ · Dq, is a measure of the velocity field induced by the spatial variation of the distribution of
+the fiber directions, that determines the microscopic velocities of the cells. This term vanishes if
+the fibers distribution is homogeneous in space. Therefore, if q is homogeneous in space, even in
+case of competing cues, i.e., Eq ⊥ ∇S, in general the advective term U1
+T does not vanish, while
+in case of cooperating cues, i.e., ∇S is an eigenvector of Dq with eigenvalue D∇S , migration is in
+direction ∇S with a kinetic factor χS D∇S . In intermediate scenarios, migration happens in the
+projection Dq∇S, but, if q is not homogeneous, the dynamics is more complex and, even in case
+of cooperation, we cannot conclude anything about additivity effects.
+Case iii) In this case, we can only expand with Taylor series the chemoattractant, as in (30),
+and the turning kernel (36) may be approximated as
+T[q, S](x, v, vˆ) =c(x)
+h
+S(x) ΓS
+0
+Z
+R+
+γq(λ)q(x + λvˆ, vˆ) dλ + ΓS
+1
+(∇S · vˆ)
+Z
+R+
+γq(λ)q(x + λvˆ, vˆ) dλi
+ψ(v)
+(49)
+where we neglected higher order terms in λ. Here, the normalization coefficient reduces to
+c(x) = 1
+Γ
+S
+0 Γ
+q
+0 S(x)
+.
+In this case we may choose
+ = min 
+1
+ηq
+, ηS
+
+,
+and, re-scaling the space variable as (14), we get
+T0[q, S](ξ, v, vˆ) = 1
+Γ
+q
+0
+Z
+R+
+γq(λ)q(ξ + λvˆ, vˆ) dλ ψ(v) (50)
+and
+T1[q, S](ξ, v, vˆ) = Γ
+S
+Γ
+q
+0
+
+∇S
+S
+· vˆ
+ Z
+R+
+γq(λ)q(ξ + λvˆ, vˆ) dλ ψ(v).
+Equation (50) indicates that the equilibrium distribution is a non-local average of the fibers distribution according to the sensing kernel γq and normalized by the measure of the sensed linear
+tract Γq
+0
+over the direction vˆ. Its average is
+U0
+T
+(ξ) = U¯
+Γ
+q
+0
+Z
+R+
+γq(λ)Eq(ξ + λvˆ) dλ
+
+that vanishes as ξ + λvˆ ∈ Ω and (27) holds true. Therefore, we perform the diffusive limit that
+leads to (22) with
+D
+0
+T
+(ξ) = D
+Z
+S
+d−1
+1
+Γ
+q
+0
+Z
+R+
+γq(λ) q(ξ + λvˆ, vˆ) dλ vˆ ⊗ vˆ dvˆ .
+Let us now define
+D
+λ
+q
+(ξ) = Z
+S
+d−1
+q(ξ + λvˆ, vˆ) vˆ ⊗ vˆ dvˆ , (51)
+that, for each point ξ, is the diffusion tensor of the fibers on a circle of radius λ, and
+D¯ 0
+q =
+1
+Γ
+q
+0
+Z
+R+
+γq(λ)D
+λ
+q dλ , (52)
+that is a weighted diffusion tensor of the fibers in the whole neighborhood sensed by the cells, so
+that
+D
+0
+T
+(ξ) = DD¯ 0
+q
+(ξ) (53)
+and
+U1
+T
+(ξ) = U c ¯ (ξ)
+Z
+S
+d−1
+
+Γ
+S
+1
+(∇S · vˆ)
+Z
+R+
+γq(λ) q(ξ + λvˆ, vˆ) dλ!
+vˆ dvˆ
+= U c ¯ (ξ) ΓS
+1 ∇S Z
+R+
+γq(λ)
+Z
+S
+d−1
+vˆ ⊗ vˆ q(ξ + λvˆ, vˆ) dvˆ dλ =
+= U¯ Γ
+S D¯ 0
+q
+(ξ)
+∇S
+S(ξ)
+= χ
+S
+(ξ)D¯ 0
+q
+(ξ)∇S .
+(54)
+We have defined the chemotactic sensitivity as
+χ
+S
+(ξ) := U¯ Γ
+S
+S(ξ)
+,
+that is a function of the chemical alone, as it is the cue inducing a diffusive behavior. Here, the
+advection velocity is related to a non-local average of the diffusion tensor of the fibers D¯ 0
+q projected on ∇S, and it cannot be decomposed into two contributions because of the large size of the
+cell with respect to the spatial variability of the fibers distribution. Therefore, in this case the
+additivity effect of the two cues is not evident and the possible scenarios are many more.
+Remark If we consider γq = δ(λ − 0) we obtain a local sensing of fibers. Without chemotaxis we
+would have the classical model for contact guidance [24], that gives rise, at the macroscopic level,
+to a fully anisotropic diffusive equation. The presence of a non-local chemoattractant, even when
+R < lS , gives rise to a drift correction term proportional to Dq∇S.
+Case iv) The last case allows only for the Taylor expansion of the distribution function q, as in
+(32). Therefore, the turning kernel may be approximated as
+T[q, S](x, v, vˆ) =h
+c0(x) Γq
+0
+q(x, vˆ)
+Z
+R+
+γS (λ)S(x + λvˆ) dλ + c1(x)Γq
+1
+(∇q · vˆ)
+Z
+R+
+γS (λ)S(x + λvˆ) dλi
+ψ(v)
+(55)
+where
+c0(x)
+−1
+:= 2 Z
+S
+d−1
+Γ
+q
+0
+q(x, vˆ)
+Z
+R+
+γS (λ)S(x + λvˆ) dλ dvˆ
+13
+and
+c1(x)
+−1
+:= 2 Z
+S
+d−1
+Γ
+q
+1
+(∇q · vˆ)
+Z
+R+
+γS (λ)S(x + λvˆ) dλ dvˆ ,
+both different from zero. In this case we may choose
+ = min 
+1
+ηS
+, ηq
+
+and, by re-scaling (55) with (14), we get T[q, S] = T0[q, S]. Hence U0
+T
+(ξ) does not vanish in Ω, as
+it is given by
+U0
+T
+(ξ) = U¯ Γ
+q
+0
+c0(ξ)
+Z
+S
+d−1
+vˆ q(ξ, vˆ)
+Z
+R+
+γS (λ) S(ξ + λvˆ) dλ dvˆ
++
+U¯ Γ
+q
+1
+c1(ξ)
+Z
+S
+d−1
+vˆ ⊗ vˆ ∇q
+Z
+R+
+γS (λ) S(ξ + λvˆ) dλ dvˆ ,
+(56)
+and the macroscopic equation is given by (23). The mean velocity (56) is a linear combination of
+a non-local measure of the chemoattractant S over the fibers network and a non-local measure of
+S weighted by the directional average of the spatial variability of the fiber direction.
+Remark If we consider a local sensing for the chemoattractant, i.e. γS = δ(λ − 0), we obtain a
+macroscopic advection-diffusion equation, where the macroscopic velocity is induced by the spatial
+variation of the distribution of fiber directions ∇ · Dq, and the measure of S does not affect the
+choice of the direction. In this case, if ∇q vanishes, the model reduces to a fully anisotropic
+diffusive equation [24].
+3.2 Amoeboid motion and chemotaxis: non-local dependent sensing
+Concerning the non-local dependent sensing case (5)-(9) with (37), we recall the expression of the
+transition probability
+T[q, S](x, v, vˆ) = c(x)
+Z
+R+
+γ(λ)S(x + λvˆ) q(x + λvˆ, vˆ)dλ ψ(v),
+with
+c(x) := Z
+S
+d−1
+Z
+R+
+γ(λ)S(x + λvˆ) q(x + λvˆ, vˆ)dλ .
+The macroscopic velocity is here given by
+UT (x) = c(x)U¯
+Z
+S
+d−1
+vˆ
+Z
+R+
+γ(λ)S(x + λvˆ) q(x + λvˆ, vˆ)dλ dvˆ . (57)
+The macroscopic limits can be performed as in the previous section and the choice of the parameter
+ will be the same for the cases i)−iv), since it does not depend on the kind of model (independent
+or dependent sensing), but only on ηS and ηq.
+Case i) In this case we cannot consider the expansions (32) and (30), and, thus, we cannot
+expand the turning kernel, whose non vanishing average is given by (57). Therefore, we perform
+a hyperbolic limit leading to (23) with macroscopic velocity (57).
+14
+Case ii) When, instead, the maximum sensing radius R is smaller than both the characteristic
+lengths, we may consider the positive expansions (32) and (30) and substitute them in (37).
+Neglecting the higher order terms in λ, we get the approximation
+T[q, S](x, v, vˆ) = c(x)
+h
+S(x) Γ0 q(x, vˆ) + S(x) Γ1 ∇q · vˆ + Γ1 q(x, vˆ) ∇S · vˆ
+i
+ψ(v) (58)
+with
+c(x) = 1
+S(x) Γ0
+and
+Γi
+:= Z R
+0
+λ
+i
+γ(λ) dλ , i = 0, 1 .
+Re-scaling the space variable as in (14), we find
+T0[q, S](ξ, v, vˆ) = q(ξ, vˆ)ψ(v)
+and
+T1[q, S](ξ, v, vˆ) = Γh
+∇q · vˆ + q(ξ, vˆ)
+∇S
+S
+· vˆ
+i
+ψ(v)
+with
+Γ := Γ1
+Γ0
+.
+Therefore, UT
+0
+(ξ) = 0, because of (27), and we can perform a diffusive scaling that leads to the
+zero-order macroscopic diffusion tensor
+D
+0
+T
+(ξ) = D Dq(ξ), (59)
+and to the macroscopic first-order velocity
+U1
+T
+(ξ) = U¯ Γ ∇ · Dq(ξ) + U¯ Γ Dq(ξ)
+∇S
+S
+. (60)
+The macroscopic advection-diffusion equation (22) now reads (dropping the dependencies)
+∂
+∂τ ρ + ∇ · 
+χ
+
+∇ · Dq + Dq
+∇S
+S
+
+ρ
+
+= ∇ · 
+1
+µ
+∇ ·
+D Dq ρ
+
+
+(61)
+where
+χ := U¯Γ .
+Similar considerations to the case ii) of the non-local independent sensing model may be done,
+except that there is a unique sensitivity χ that weights equally the two contributions to the
+advection term (60).
+Case iii) In this case, we expand only the chemoattractant S(x+λvˆ), as in (30), and the turning
+kernel (37) can be approximated as
+T[q, S](x, v, vˆ) =c(x)
+h
+S(x)
+Z
+R+
+γ(λ)q(x + λvˆ, vˆ) dλ + (∇S · vˆ)
+Z
+R+
+λ γ(λ)q(x + λvˆ, vˆ) dλi
+ψ(v)
+(62)
+with
+c(x) := 1
+Γ0 S(x)
+.
+Re-scaling the space variable as in (14), we find
+T0[q, S](ξ, v, vˆ) = 1
+Γ0
+Z
+R+
+γ(λ)q(ξ + λvˆ, vˆ) dλ ψ(v),
+1
+and
+T1[q, S](ξ, v, vˆ) = 1
+Γ0
+
+∇S
+S
+· vˆ
+ Z
+R+
+λ γ(λ)q(ξ + λvˆ, vˆ) dλ ψ(v).
+The macroscopic velocity of zero order is then
+U0
+T
+(ξ) = U¯
+Γ0
+Z
+S
+d−1
+Z
+R+
+γ(λ) q(ξ + λvˆ, vˆ) dλ vˆ dvˆ , (63)
+and, again, it vanishes because of ξ + λvˆ ∈ Ω and (27). Therefore, the macroscopic diffusionadvection equation is given by (22) with
+D
+0
+T
+(ξ) = D
+Γ0
+Z
+R+
+D
+λ
+q
+(ξ) γ(λ)dλ = DD¯ 0
+q
+(64)
+and
+U1
+T
+(ξ) = U¯
+Γ0
+Z
+R+
+λ D
+λ
+q
+(ξ) γ(λ) dλ ∇S
+S(ξ)
+= U¯D¯ 1
+q
+(ξ)
+∇S
+S(ξ)
+, (65)
+where we defined
+D¯ 1
+q
+(ξ) = 1
+Γ0
+Z
+R+
+λ D
+λ
+q
+(ξ) γ(λ)dλ (66)
+as an average of the weighted diffusion tensor of the fibers in the whole neighborhood sensed by
+the cells, differently form the case iii) of the non-local independent model.
+Case iv) In this case, again, we can only consider the positive approximation (32), and the
+transition probability rewrites as
+T[q, S](x, v, vˆ) =h
+c0(x)q(x, vˆ)
+Z
+R+
+γ(λ) S(x + λvˆ) dλ + c1(x)∇q · vˆ
+Z
+R+
+λ γ(λ) S(x + λvˆ) dλi
+ψ(v)
+(67)
+where
+c0(x)
+−1
+:= 2 Z
+S
+d−1
+q(x, vˆ)
+Z
+R+
+γ(λ)S(x + λvˆ) dλ dvˆ
+and
+c1(x)
+−1
+:= 2 Z
+S
+d−1
+(∇q · vˆ)
+Z
+R+
+λ γ(λ)S(x + λvˆ) dλ dvˆ ,
+both different from zero. As before, by re-scaling (67) with (14), we get T[q, S] = T0[q, S] and we
+have that the average velocity U0
+T = UT 6= 0. In particular, it is given by
+UT (ξ) : = U¯
+c0(ξ)
+Z
+S
+d−1
+vˆ q(ξ, vˆ)
+Z
+R+
+γ(λ) S(ξ + λvˆ) dλ dvˆ
++
+U¯
+c1(ξ)
+Z
+S
+d−1
+vˆ ⊗ vˆ ∇q(ξ, vˆ)
+Z
+R+
+λ γ(λ)S(ξ + λvˆ) dλ dvˆ
+(68)
+and, thus, we perform a hyperbolic limit leading to (23). The mean velocity (68) is a linear
+combination of a non-local measure of the chemoattractant S over the fibers network and a nonlocal average of S weighted by the directional average of the spatial variability of the fiber direction.
+16
+Case non-local independent sensing (5)-(9)-(36) non-local dependent sensing (5)-(9)-(37)
+i) drift dominated drift dominated
+UT = cU¯
+Z
+Sd−1
+vˆ
+Z R
+0
+γS (λ)S(ξ + λvˆ)dλZ R
+0
+γq(λ) q(ξ + λvˆ, vˆ)dλdvˆ UT = cU¯
+Z
+Sd−1
+vˆ
+Z R
+0
+γ(λ)S(ξ + λvˆ)q(ξ + λvˆ, vˆ)dλ dvˆ
+ii) drift-diffusion drift-diffusion
+D
+0
+T = D Dq D
+0
+T = D Dq
+U1
+T = U¯
+
+Γ
+q ∇ · Dq + ΓS Dq
+∇S
+S
+
+U1
+T = U¯Γ
+
+∇ · Dq + Dq
+∇S
+S
+
+iii) drift-diffusion drift-diffusion
+D
+0
+T = DD¯0
+q D
+0
+T = DD¯0
+q
+U1
+T = U¯ Γ
+S D¯0
+q
+∇S
+S
+U1
+T = U¯ D¯1
+q
+∇S
+S
+iv) drift dominated drift dominated
+UT =
+U¯ Γ
+q
+0
+c0
+Z
+Sd−1
+vˆ q
+Z R
+0
+γS (λ) S(ξ + λvˆ) dλ dvˆ UT :=
+U¯
+c0
+Z
+Sd−1
+vˆ q
+Z R
+0
+γ(λ) S(ξ + λvˆ) dλ dvˆ
++
+U¯ Γ
+q
+1
+c1
+Z
+Sd−1
+vˆ ⊗ vˆ ∇q
+Z R
+0
+γS (λ) S(ξ + λvˆ) dλ dvˆ +
+U¯
+c1
+Z
+Sd−1
+vˆ ⊗ vˆ ∇q
+Z R
+0
+λ γ(λ)S(ξ + λvˆ) dλ dvˆ
+Table 1: Summary of the models (dropping the local dependencies in ξ).
+3.2.1 Comments
+We can observe that, if γq = γS = γ = δ(λ−R), the two non-local transport models for independent
+and dependent sensing are the same, while, if the sensing kernels are not dirac deltas (even if
+γq = γS = γ), the transport models are always different. Instead, at the macroscopic level, with
+any choice of the sensing functions the models coincide only in case ii). In this case, in fact, the
+macroscopic limits are different only if γq 6= γS , while in the cases iii) and iv) they are different if
+the sensing kernel are not dirac deltas (even if γS = γq = γ). The relevant difference concerns the
+macroscopic transport velocities (see (54) and (65) for the case iii, and (56) and (68) for the case
+iv). In fact, in the cases iii) and iv), for the non-local dependent sensing model, as only one cue
+is considered non-locally and both cues are averaged with the same sensing function γ, we have a
+weighted average on λ of the non-local quantities, that results in the weighted averages (65) and
+the second term of (68). These remarks are summarized in Table 2.
+γq = γS = γ = δ γq = γS = γ 6= δ γq 6= γS
+Meso models (5)-(9)-(36) and (5)-(9)-(37) = 6= 6=
+Macro models case i) = 6= 6=
+Macro models case ii) = = 6=
+Macro models case iii) = 6= 6=
+Macro models case iv) = 6= 6=
+Table 2: Summary of the comparison of the models for different choices of the sensing functions.
+= indicates the cases in which the models coincide, while 6= the ones in which the models are
+different.
+17
+4 Numerical simulations
+We shall now propose two-dimensional numerical simulations in order to illustrate the behavior of
+the kinetic transport models for non-local independent sensing and non-local dependent sensing.
+In particular, we shall integrate numerically the transport equation as in [36] and, then, we shall
+compute the macroscopic density (1). Concerning the fibers network, a classical used distribution
+is the Von Mises distribution [39]
+q˜(x, vˆ) = 1
+2πI0(k(x)) e
+k(x) u(x)·vˆ
+where Iν(k) is the modified Bessel function of first kind of order ν and
+u(x) = (cos(θq(x)),sin(θq(x))).
+It can be proved that Eq˜(x) = u(x) [25], and, therefore, θq(x) is the mean direction in the
+space [0, 2π) of the fibers located at point x. As we are dealing with cell migrating on a nonpolarized network of fibers, we shall consider the symmetric version, namely the Bimodal Von
+Mises distribution
+q (x, vˆ) = 1
+4πI0(k(x))
+
+e
+k(x) u(x)·vˆ + e
+−k(x) u(x)·vˆ
+
+,
+that also satisfies Q3; its variance is [25]
+Dq(x) = 1
+2
+
+1 −
+I2(k)
+I0(k)
+
+I2 +
+I2(k)
+I0(k)
+u ⊗ u,
+where I2 is the identity tensor in R
+2×2
+, while k and u are functions of x. Moreover, the variance
+in the space [0, 2π) is the scalar
+Dq(x) = 1
+2
+Z 2π
+0
+q(θ − θq)
+2
+dθ =
+
+1 −
+I1(k)
+I0(k)
+
+that represents the degree of alignment of the fibers at point x.
+4.1 Test 1: local ECM sensing and non-local chemotaxis
+As a first example, we shall present the particular case in which the sensing of q is local. This
+illustrates the effect of a second directional cue when dealing with a cell population migrating by
+contact guidance and evaluating the local alignment of the fibers over a non-polarized network.
+Formally, we are dealing with (36) in which γq = δ(λ−0). In particular, we shall consider a region
+Ωq = {x = (x, y) ∈ Ω s.t. x1 ≤ x ≤ x2} (69)
+with x1 = 1.8 and x2 = 3.2 in which the fibers are strongly aligned along the direction identified
+by θq = π/2. In particular, for (x, y) ∈ Ωq, k(x, y) = 700, such that Dq = 5 · 10−3
+. In the rest of
+the domain Ω − Ωq fibers are uniformly distributed. The chemoattractant has a Gaussian profile
+S(x, y) = p
+mS
+2πσ2
+S
+e
+−
+((x, y) − (xS , yS ))2
+2σ
+2
+S . (70)
+In particular, in Test 1 (see Fig. 1) we choose (xS , yS ) = (4, 4), mS = 10, σ2
+S = 0.1. The initial
+condition for the cell population is a Gaussian
+ρ0(x, y) = r0e
+−
+((x, y) − (x0, y0))2
+2σ
+2
+0 (71)
+18
+with r0 = 0.1 and σ
+2
+0 = 0.1. In this first test, the initial condition for the cell population is centered
+in (x0, y0) = (2.5, 2.5), i.e., the center of the region Ωq (see Fig. 1a). Without chemoattractant,
+because of the presence of highly aligned fibers, we would expect that cells diffuse anisotropically
+in the preferential direction of the fibers ±π/2, forming the well known ellipsis [43], that represents
+cells moving with the same probability along direction π/2 and −π/2. In the present case, due to
+the presence of a chemoattractant, the symmetry is broken, and, even if q describes a non-polarized
+fibers network, there is a preferential sense of motion (see Fig. 1d-1f). In particular, cells migrate
+along the fibers in the direction identified by θq = π/2, corresponding to the preferential sense
+imposed by the presence of the chemoattractant in the upper-right corner of the domain Ω. Given
+this directional setting, the cell population dynamics is also greatly affected by the strength of the
+chemoattractant, that depends on mS and σ
+2
+S
+, the degree of the alignment Dq, that depends on
+k(x, y), and by the sensing radius R. Another important aspect is the sensing function γS , that
+influences the transient dynamics and, especially, the relaxation time. This appears to be double
+in the case of a Heaviside function, since the kernel γS doubles when computed with a Heaviside
+function instead of a Dirac delta (see also [36]).
+(a) Initial cell distribution (b) Initial average polarization (c) Center of mass: trajectory.
+(d) t=1.25 (e) t=3.75 (f) t=12.5
+(g) t=1.25 (h) t=3.75 (i) t=12.5
+Figure 1: Test 1 Evolution of the initial distribution given in (a) for the case of local q and
+non-local chemoattractant S with sensing function γS = δ(λ − R). In (b), S is a Gaussian centred
+in (4, 4) and with mS = 10 and σ
+2
+S = 0.1. The sensing radius of the cells is set to R = 0.5.
+(c): trajectory of the center of mass of the cell population, where each black dot is plotted every
+∆t = 1. Figs. (d)-(f): evolution of the macroscopic density. Figs. (g)-(i): polarizations of the
+cells.
+19
+We also analyzed the average polarization of the cells at every position x, that is given by
+the momentum (2). The microscopic directions of cells are initially randomly distributed and
+they start from a vanishing initial speed (see Fig. 1b). Then, they start to align along the
+fibers and to migrate upward in the direction individuated by the angle π/2, since cells sense the
+chemoattractant (see Figs. 1g-1h). Eventually when cells reach the level y = 4, the microscopic
+directions polarize towards the chemoattractant (see Fig. 1i). The center of mass plotted in Fig.
+1c stays in the region Ωq during the migration of cells along the fibers bundle in Ωq, and it moves
+out of Ωq only when it reaches y = 4. The black dots are plotted every ∆t = 1 and it is clear
+that the highest acceleration happens when cells are on the bundle of fibers, while they are slowed
+down when they start to move out of the fibers stripe Ωq.
+4.2 Test 2: non-local ECM sensing and chemotaxis
+As a second test, we present both the non-local independent sensing model and the non-local
+dependent sensing model. We shall now consider a non-local sensing of the distribution of fibers.
+In particular, we assume fibers distributed similarly to the previous test, i.e., fibers shall be highly
+aligned in Ωq given, this time, by x1 = 2.1 and x2 = 2.9 (see Fig. 2b). Here, for (x, y) ∈ Ωq,
+k(x, y) = 100, that corresponds to Dq = 0.0025, and θq(x, y) = π/2. In the region Ω−Ωq fibers are
+uniformly distributed. The initial condition of the cell population is (71) with in (x0, y0) = (1, 0.5)
+(see Fig. 2a) while the chemoattractant is located as in Test 1, with mS = 10 and σ
+2
+S = 0.05. We
+shall compare the dynamics of the cells in four settings:
+1. local fiber distribution and non-local chemoattractant, as in Test 1, i.e., (36) with γq =
+δ(λ − 0) and γS = δ(λ − R);
+2. non-local sensing with a Dirac Delta for both q and S; this corresponds to both (36) and
+(37) with γq = γS = γ = δ(λ − R);
+3. non-local independent sensing with Heaviside sensing functions for both S and q, i.e., (36)
+with γq = γS = H(R − λ);
+4. non-local dependent sensing for q and S, dealing with (37) and γ = H(R − λ).
+Results of these simulations are shown in Fig. 2. We can observe that, in the 1-4 settings, cells start
+from (1, 0.5), they are attracted by the chemoattractant and, on their way towards S, they cross
+the aligned fibers region Ωq and climb up this region in the direction π/2. Eventually, in all the
+cases, cells reach the chemoattractant, but the dynamics, as well as the transient time, is influenced
+by the different sensing kernels, even though the differences are not extremely appreciable, and
+by the local or non-local sensing strategy. Although settings 3 and 4 in Fig. 2, that are related to
+the case of independent and dependent cues, respectively, do not show very strong differences, in
+case 3 (see Figs. 2k-2n) the tendency of going in both the direction π/2, determined by the fibers,
+and π/4, determined by the chemoattractant, appears more marked because of the independent
+sensing. In contrast, this behavior results the least evident in the case in which cells deal with a
+local sensing of the fibers (setting 1), resulting also in a general slow down of the dynamics.
+4.3 Test 3. non-local independent sensing model: comparison of the
+cases i) − iv)
+We now present a comparison of the macroscopic behaviors of the cells, depending on the relation
+between R, lS and lq, i.e., we compare the cases i), ii), iii) and iv). In particular, we shall do
+this for the non-local independent sensing model with γq = γS = H(R − λ), as this is the case
+in which the transport model is different from the dependent sensing model. Additionally, the
+independence of the two sensings allows to visualize more efficiently the two distinct directional
+effects (contact guidance and chemotaxis).
+20
+(a) Initial condition for cells (b) Initial fiber distribution
+(c) t=1.25 (d) t=3.75 (e) t=5 (f) t=6.25
+(g) t=1.25 (h) t=3.75 (i) t=5 (j) t=6.25
+(k) t=1.25 (l) t=3.75 (m) t=5 (n) t=6.25
+(o) t=1.25 (p) t=3.75 (q) t=5 (r) t=6.25
+Figure 2: Test 2 Time evolution of the initial distribution given in Fig. 2a in the four settings
+1-4. The sensing radius of the cells is R = 0.5 and the chemoattractant is (70) with mS =
+10, σ2
+S = 0.05 and (xS , yS ) = (4, 4). Setting 1 is represented in Figs. (c)-(f): local q and non-local
+chemoattractant, γS = δ(λ − R). Setting 2 is represented in Figs. (g)-(j): non-local q and S with
+sensing functions γq = γS = δ(λ−R). Setting 3 is represented in Figs. (k)-(n): non-local q and S,
+independent sensing with γq = γS = H(R − λ). Setting 4 is represented in Figs. (o)-(r): non-local
+q and S, dependent sensing with γ = H(R − λ).
+21
+We shall consider the turning kernel describing contact guidance lead by a q with mean direction
+θq(x, y) = 3π/4 ∀(x, y) ∈ Ω and coefficient k(x, y), modulating the strength of the alignment, given
+by a gaussian distribution
+k(x, y) = mke
+−
+((x, y) − (xk, yk))2
+2σ
+2
+k (72)
+where (xk, yk) = (2.5, 2.5) and σ
+2
+k = 0.15 (Fig. 3d). This mimics the situation of fibers more
+aligned in the central circular region and uniformly disposed in the rest of the domain. We shall
+consider different values of mk in order to obtain different values of lq: mk = 10 corresponds to
+lq ≈ 0.031 and mk = 100 corresponds to lq ≈ 0.0031. Details about the estimation of lq for a
+Bimodal Von Mises distribution of fibers q are given in Appendix A. The chemoattractant is (70)
+with (xS , yS ) = (4.5, 4.5) and mS = 10. In the simulations, we shall consider three different values
+for the variance of the chemoattractant σ
+2
+S
+in order to obtain different values of lS : σ
+2
+S = 0.05 that
+corresponds to lS = 0.002 in Fig. 3a, σ
+2
+S = 0.25 that corresponds to lS = 0.055 in Fig. 3b and
+σ
+2
+S = 1.8 that corresponds to lS = 0.25 in Fig. 3c. The initial distribution of cells for all the tests
+presented in Figs. 4, 5, 6, 7 and 8 is given by (71) with (x0, y0) = (1.5, 1.5), r0 = 0.1, σ
+2
+0 = 0.1.
+In particular, we present five sets of simulations that are summarized in Table 3.
+lS lq R Case η Figure
+0.002 0.0031 0.7 i) < 1 4
+0.25 0.0031 0.7 i)  1 5
+0.055 0.031 0.02 ii) > 1 6
+0.25 0.0031 0.02 iii)  1 7
+0.002 0.031 0.02 iv) < 1 8
+Table 3: Summary of the simulations presented in Test 3.
+In Fig. 4, we consider the case in which ηS , ηq  1, i.e., we are dealing with case i). The
+macroscopic behavior is strongly hyperbolic with macroscopic velocity given by (40). In fact, in
+Fig. 4 we can observe that the behavior is not diffusive and the cluster of cells is quite compact. Moreover, when cells reach the region in which fibers are strongly aligned in the direction
+3π/4 (as shown in Fig. 3d), that is perpendicular to the favorable direction π/4 induced by the
+chemoattractant, they surround that region inducing strong alignment and go over towards the
+chemoattractant. In this setting, the parameter defined in (35) is slightly smaller then 1 and, in
+fact, chemotaxis prevails in the overall dynamics, as the stationary state is clearly peaked on the
+chemoattractant profile, but the fibers structure influences the transient.
+In Fig. 5, we shall consider S with σ
+2
+S = 1.8 and, consequently, lS = 0.25 (see Fig. 3c).
+Concerning the fibers, we have mk = 100, so that lq ≈ 0.0031, and the sensing radius is R = 0.7.
+This setting falls again in case i), but the behavior is different with respect to the previous
+simulation in Fig. 4. The chemoattractant in Fig. 3c, in fact, is spread over the whole domain
+and, actually, the quantity lS is almost 102
+times the lS considered in Fig. 3a and used for the
+simulation in Fig. 4. Even though we are still in a strongly hyperbolic case and cells are guided
+by the strong drift (40), as R is slightly larger then lS and lS is large, the cell cluster diffuses a bit
+more in the domain. When it reaches the region of strongly aligned fibers, it starts to surround
+that region (see Figs. 5a-5c), but, as ηS = 2.8 = O(1), some cells, that do not surround the region,
+are slowed down and partially tend to align along the fibers. In Fig. 5d, for instance, we have a
+high density of cells both in the strongly aligned fiber region and in the region of high density of
+chemoattractant. Eventually, cells manage to overcome the area of highly aligned fibers and they
+tend to converge to the chemoattractant profile (see Figs. 5e-5f). Now, the the overall dynamics
+is greatly affected by the fibers and, in fact, η  1.
+The second scenario, illustrated in Fig. 6, refers to the case ii), since the sensing radius
+R = 0.02 is smaller than both lS = 0.055 and lq ≈ 0.031. At the macroscopic level, the behavior
+22
+(a) Chemoattractant S with σ
+2
+S = 0.05. (b) Chemoattractant S with σ
+2
+S = 0.25.
+(c) Chemoattractant S with σ
+2
+S = 1.8.
+(d) Fibers distribution
+Figure 3: Test 3 Three different chemoattractants used for comparing models i) − iv). The
+chemoattractant profile is given by (70) with mS = 10 and (a) σ
+2
+S = 0.05, corresponding to
+lS = 0.002, (b) σ
+2
+S = 0.25, corresponding to lS = 0.055, and (c) σ
+2
+S = 1.8, corresponding to
+lS = 0.25. The fibers distribution in sketched in (d).
+of the system is described by the diffusion-advection equation (47) with macroscopic velocity (46).
+Actually, in Fig. 6 we can observe a highly diffusive behavior, as the macroscopic density of cells
+has invaded almost the half of the domain before even starting to be influenced by the fibers. If
+we compare the same time step in Figs. 6b and 5b, we see that the cells are in both cases reaching
+the fibers and feeling the region in which fibers are aligned the most. However, in Fig. 5b the cell
+cluster is much more compact than in Fig. 6b, where, instead, cells already occupied half of the
+domain, because of diffusion, and we have high density of cells both closely to the strongly aligned
+fiber region and around the initial position. Therefore, cells start surrounding the central region
+of strongly aligned fibers, because they already sense the chemoattractant, and, once overcome
+this area, they tend to the chemoattractant profile (see Figs. 6c-6f). In particular, in the transient
+time, cells accumulate the most at the sides of the region with highly aligned fibers. In this specific
+setting, η > 1 and, in fact, contact guidance highly affects the dynamics.
+The third scenario, illustrated in Fig. 7, refers to the case iii), since the sensing radius R = 0.02
+is smaller than lS = 0.25 but it is larger then lq ≈ 0.0031. The macroscopic setting is described
+by a diffusion-advection equation with diffusion tensor and drift velocity given by (53) and (54),
+respectively. As ηS < 1, we have that the chemoattractant induces a strong diffusivity, but being
+ηq > 1, the alignment of fibers strongly affects the dynamics (see Figs. 7c-7d). Comparing, in
+addition, Figs. 6b and 7b, we have now that the highest cell concentration is in the mean fiber
+direction θq = 3π/4 in the region surrounding the center of the domain, where the fibers are
+aligned with a higher degree. As already observe in section 3, this scenario prescribes η  1 and,
+in fact, contact guidance dominates again the dynamics.
+Eventually, for a sensing radius R = 0.02 smaller than lq ≈ 0.031, but larger than lS = 0.002,
+the macroscopic behavior is approximated by an hyperbolic equation with drift velocity given in
+(56). Results of the simulation are presented in Fig. 8. Here, the chemoattractant has the profile
+23
+(a) t=1.25 (b) t=1.875 (c) t=2.5
+(d) t=3.75 (e) t=5 (f) t=6.25
+Figure 4: Test 3 Case i) with non-local q and S, sensed with an independent sensing through the
+kernels γq = γS = H(R−λ). S is given in Fig. 3a with mS = 10 and σ
+2
+S = 0.05, so that lS = 0.002.
+The fibers distribution q has a space dependent parameter k given by (72) with mk = 100, so that
+lq ≈ 0.0031. The sensing radius of the cells is R = 0.7.
+(a) t=2.5 (b) t=5 (c) t=10
+(d) t=15 (e) t=22.5 (f) t=27.5
+Figure 5: Test 3 Case i) with non-local q and S, independent and sensing with γq = γS = H(R−λ).
+S is given in Fig. 3c, that corresponds to lS = 0.25, while for the fiber distribution mk = 100, so
+that lq ≈ 0.0031. The sensing radius of the cells is R = 0.7.
+shown in Fig. 3a. Cells diffuse in the domain because ηq is smaller than 1, and they start moving
+in a region with randomly disposed fibers (see Fig. 8a). Then, they mainly follow the preferential
+direction π/4 thanks to the presence of the chemoattractant. In fact, it induces a strong drift
+24
+(a) t=2.5 (b) t=5 (c) t=7.5
+(d) t=10 (e) t=15 (f) t=20
+Figure 6: Test 3 Case ii) with non-local q and S, independent and sensing with γq = γS =
+H(R − λ). S is given in Fig. 3b, that corresponds to lS = 0.055, while mk = 10, so that
+lq ≈ 0.031. The sensing radius of the cells is R = 0.02.
+(a) t=2.5 (b) t=5 (c) t=10
+(d) t=20 (e) t=30 (f) t=60
+Figure 7: Test 3 Case iii) with non-local q and S, independent and with sensing function γq =
+γS = H(R−λ). S is given in Figure 3c, so that lS = 0.25, while for the fiber distribution mk = 100,
+corresponding to lq ≈ 0.0031. The sensing radius of the cells is set to R = 0.02.
+because of the high non-locality, determining ηS  1. Here chemotaxis is slightly dominating the
+dynamics and, in fact, η < 1.
+25
+(a) t=1.25 (b) t=2.5 (c) t=5
+(d) t=7.5 (e) t=10 (f) t=15
+Figure 8: Test 3 Case iv) with non-local q and S, independent sensing with γq = γS = H(R − λ).
+S is given in Fig. 3a, that corresponds to lS = 0.002, whilst mk = 10, so that lq ≈ 0.031. The
+sensing radius of the cells is R = 0.02.
+4.4 Test 4: heterogeneous ECM environment
+We now consider a domain Ω divided in several regions, each of them characterized by a different
+average direction of the fibers. In particular, we shall do this in the case of independent sensing
+model with γq = γS = H(R−λ), as for Test 3; the independence of the two sensings, in fact, allows
+to visualize more efficiently the two distinct directional effects. As first scenario, we shall consider
+the domain schematized in Fig. 9a; in each subdomain we have k(x, y) = 50, that corresponds
+to Dq = 0.005. The initial condition of the cells is represented in Fig. 9c, with initial density
+r0 = 0.1, while the chemoattractant has a gaussian profile (70) centered in (xS , yS ) = (4, 4), with
+mS = 10 and σ
+2
+S = 0.5, as shown in Fig. 9b. We observe that cells do not migrate collectively
+towards the chemoattractant, but they divide into two main separated clusters (see Figs. 9f -
+9h): in fact, although the sensing radius R = 0.8 is quite large, the cells that are closer to the
+left boundary remain trapped in the first subdomain, showing a loss of adhesion with the rest of
+the cell population. As shown in Fig. 9i, even though the cells that are in the left subdomain
+horizontally align to the chemoattractant, the high degree of alignment of the fiber does not allow
+them to escape this region, even for large times.
+As second scenario, we shall consider the domain represented in Fig. 10a; in each subdomain,
+the parameter k(x, y) = 50. The initial condition of the cell population is (71) with (x0, y0) =
+(4, 0.5) and r0 = 0.1, while the chemoattractant has a gaussian profile (70) centered in (xS , yS ) =
+(2, 4.5) with mS = 10 and σ
+2
+S = 0.05, as shown in Fig. 10c and 10b, respectively. We observe that
+cells do not migrate directly towards the chemoattractant, as they sense the heterogeneous fibrous
+environment and, consequently, adapt their migration to it. In particular, cells that are able to
+reach and sense the isotropic subdomain where the fibers are uniformly distributed (defined by
+1 ≤ x ≤ 3 and 0 ≤ y ≤ 3), go in this direction imposed by the gradient of the chemoattractant.
+On the other hand, in the subdomain 3 ≤ x ≤ 5 and 1 ≤ y ≤ 2, they follow the direction of
+fiber alignment, that is π/4, perpendicular to the favorable direction imposed by S. However,
+the sensing radius R = 0.7 allows the cells that are closer to the right boundary to escape quite
+fast the disadvantageous (in terms of preferential direction) subdomains and, following firstly the
+direction π/2 in 2 ≤ y ≤ 3 and, then, 3π/4 in 3 ≤ y ≤ 4, to reach the chemoattractant.
+26
+(a) Fibers distribution. (b) Chemoattractant S. (c) Initial condition for the cell.
+(d) t=0.04 (e) t=1.6 (f) t=2.904
+(g) t=18.4 (h) t=44 (i) t=67.2
+Figure 9: Test 4 Migration of cells in an heterogenous domain as illustrated in (a). The sensing
+radius of the cells is R = 0.8. The chemoattractant (b) is (70) with mS = 10 and σ
+2
+S = 0.5. The
+initial cell profile (c) evolves in time as illustrated in (d)-(i).
+5 Conclusion
+We have proposed a kinetic model for describing cell migration in a multi-cue environment. In
+particular, in the same spirit as [36], we have considered that cells, as they can extend protrusions
+up to several cell diameters, perform a non-local sensing of the environment up to a distance R
+(named the sensing radius) from its nucleus. In the present model, there are two guidance cues
+affecting the polarization, and, therefore, the direction of motion of the cells: contact guidance,
+that is a bi-directional cue, and a chemical gradient, that is a mono-directional cue. We remark
+that for the first time in this work a non-local sensing in the physical space of the mesoscopic
+distribution of fibers is considered. In particular, we introduced two classes of models: in the first
+one, the cells perform an independent sensing of the fibers and of the chemical in its neighborhood,
+while in the second class of models the cells average the chemical and the fibers with the same
+sensing kernel.
+In the two cases, a particular attention was devoted to the identification of the proper macroscopic limit according to the properties of the turning operator. We detected two parameters, ηq
+and ηS , that measure the relation between the cell sensing radius and the characteristic lengths
+of variation − lS and lq − of the two cues, and discriminate between a diffusion-driven regime
+with an advective correction and a drift-driven regime. In particular, when the sensing radius
+does not exceed the characteristic length of the chemoattractant, the bi-directional nature of the
+27
+(a) Fibers distribution. (b) Chemoattractant S. (c) Cells initial condition.
+(d) t=0.5 (e) t=1 (f) t=1.5
+(g) t=2.5 (h) t=3.5 (i) t=4.5
+Figure 10: Test 4 Migration of cell in an heterogenous domain as illustrated in (a). The sensing
+radius of the cells is R = 0.7. The chemoattractant (b) is (70) with mS = 10 and σ
+2
+S = 0.05. The
+initial cell profile (c) evolves in time as illustrated in (d)-(i).
+fibers allows for a diffusive regime; otherwise the hyperbolic scaling leads to macroscopic drift.
+A common feature in the different cases is the dependency of the macroscopic velocity on both
+the fibers network and the chemoattractant. This aspect enhances the non-trivial influence of
+contact guidance on the cell drift, although we considered a non polarized fibers network. This
+interdependence is in accordance with the model proposed in [58]. Moreover, in absence of a
+chemoattractant, this impact on the drift term could persist for spatial heterogenous fiber distributions. This is in accordance to what is observed in [24] and it represents a step forward with
+respect to [58], in which the drift is a function of contact guidance only through to the presence
+of a chemical gradient, i.e., without chemoattractant there will be no drift.
+The numerical simulations of the transport model pointed out the main features characterizing
+the two classes of models and the possible scenarios that they are able to capture. We observed
+that the presence of two cues influencing cell polarization, even when the fibers are sensed locally,
+ensures a preferential sense of motion for cells laying on regions of highly aligned non-oriented
+fibers. Test 3 allowed to show the importance of deriving the macroscopic equations from an underlying microscopic dynamics and in the appropriate regime: a directly postulated drift-diffusion
+equation would not capture the exact dynamics in all the possible regimes. The competitive or
+collaborative effects of the cues depend, in a first instance, on the angle between their relative
+orientations, i.e., the direction of fiber alignment θq and the gradient of the chemoattractant.
+28
+Moreover, especially for the cases of competitive cues, determining which one is the dominant
+cue depends on their relative strengths, in terms of both concentration and intensity (degree of
+alignment of the fiber k(x) or steepness of the chemoattractive gradient). We introduced the
+parameter η = lS /lq that, independently on the cell size or its sensing capability, quantifies the
+relative contribution of guidance to chemotaxis and provide a first separation between the cases
+of fiber-dominating and chemotaxis-dominating dynamics (η  1 or η  1, respectively). The
+presented framework also allows for the direct calculation of parameters that can be used to quantify directed cell migration and to set its efficiency, like, for instance, mean square displacement,
+persistence time, directional persistence and mean speed [42].
+Additionally, the non locality brings an further level of detail to the model, allowing to obtain
+different macroscopic behaviour depending on the characteristics of the two sensing. In fact, we
+did not observe strong differences between the independent and the dependent sensing models,
+when we assume in the former the same sensing kernel for fibers and chemoattractant, i.e., when
+γq = γS . However, if there are biological observations sustaining the possibility that a cell might
+implement different strategies for sensing the underlying fibers network and the chemoattractant,
+it would be possible to use the proposed model, in its independent sensing version, to investigate
+this scenario and to compare the possible outcomes of this sensing approach with the case of a
+unique and common sensing strategy.
+Potentially, the case of competitive cues, combined with the non-local aspect of the model,
+could lead to interesting further analysis. As observed in the last numerical tests, the combination
+of heterogenous landscapes of fiber with chemoattractive agents show how the cell density can
+divide and cross the domain using different migration strategies. This leads to natural questions
+about the deeper mechanisms leading the competition between the two cues, considering, for
+instance, the possible role of cell adhesion in recovering collective migration.
+We remark that, even if simulations were performed in a two dimensional setting, the transport model (and its macroscopic limits, as a consequence) is formulated in a general d-dimensional
+setting. Hence, a possible future development is to perform simulations in the three dimensional
+case, that would be much more realistic for mimicking in-vivo migration of cells in the extracellular
+matrix. Moreover, the model that we proposed may be adapted to describe other directional cues
+that might describe, among others, haptotactic, durotactic or electrotactic mechanisms. Furthermore, in the same spirit as in [37] we could enrich this model with a non-constant sensing-radius,
+as it may vary according to the spatial and directional variability of the external guidance cues.
+Lastly, this study was restricted to the case in which the cues affect only cell polarization, considering a uniform distribution of the speeds. However, similarly to what is done in [36, 37], it may
+be modified to model a multi-cue environment in which one of the signals affects also the speed
+of the cells.
+A Estimation of lq
+Let us consider the fiber density distribution q(x, vˆ) defined by a bimodal Von Mises Fisher
+q(x, vˆ) = 1
+4πI0(k(x))
+
+e
+k(x) u·vˆ + e
+−k(x) u·vˆ
+
+,
+where k(x) ∈ C1
+(Ω) and Iν(k(x)) denotes the modified Bessel function of first kind of order ν.
+We now want to give an estimation for the range of variability of the characteristic length lq,
+defined as:
+lq :=
+1
+max
+x∈Ω
+max
+vˆ∈S
+d−1
+|∇q·vˆ|
+q
+.
+29
+Since ∂I0
+∂k =
+I1(k)
+I0(k)
+, we have that
+∇q =
+
+e
+k(x) u·vˆ − e
+−k(x) u·vˆ
+
+4πI0(k(x)) ∇k (u · vˆ) −
+
+e
+k(x) u·vˆ + e
+−k(x) u·vˆ
+
+4πI2
+0
+(k(x))
+∂I0
+∂k ∇k =
+=
+
+e
+k(x) u·vˆ − e
+−k(x) u·vˆ
+
+4πI0(k(x)) ∇k (u · vˆ) −
+
+e
+k(x) u·vˆ + e
+−k(x) u·vˆ
+
+4πI0(k(x))
+I1(k(x))
+I0(k(x)) ∇k
+Since q(x, vˆ) > 0, we have:
+∇q · vˆ
+q
+=
+
+
+
+
+
+
+e
+k(x) u·vˆ − e
+−k(x) u·vˆ
+
+
+e
+k(x) u·vˆ + e−k(x) u·vˆ
+ (u · vˆ) −
+I1(k(x))
+I0(k(x))
+
+
+
+
+
+||∇k|| cos(∇k · vˆ)
+where || · || denotes the L2-norm and we use the fact that ||vˆ|| = 1. Therefore,
+
+
+
+
+∇q · vˆ
+q
+
+
+
+ =
+
+
+
+
+
+
+e
+k(x) u·vˆ − e
+−k(x) u·vˆ
+
+
+e
+k(x) u·vˆ + e−k(x) u·vˆ
+ (u · vˆ) −
+I1(k(x))
+I0(k(x))
+
+
+
+
+
+||∇k|| |cos(∇k · vˆ)|
+Recalling that |a − b| ≤ |a| + |b|, −1 ≤
+
+e
+k(x) u·vˆ − e
+−k(x) u·vˆ
+
+
+e
+k(x) u·vˆ + e−k(x) u·vˆ
+ ≤ 1 and | cos (·)| ≤ 1, we get
+
+
+
+
+∇q · vˆ
+q
+
+
+
+
+≤
+
+1 +
+
+
+
+
+I1(k(x))
+I0(k(x))
+
+
+
+
+
+||∇k|| .
+Considering Eq. (1.12) in [33] for ν = 1, we obtain that
+
+
+
+
+I1
+I0
+
+
+
+
+< 1, and, therefore,
+
+
+
+
+∇q · vˆ
+q
+
+
+
+
+< 2||∇k||
+that implies
+max
+x∈Ω
+max
+vˆ∈S
+d−1
+
+
+
+
+∇q · vˆ
+q
+
+
+
+
+< 2 max
+x∈Ω
+||∇k||.
+This translates into
+lq ≥
+1
+2 max
+x∈Ω
+||∇k|| . (73)
+In particular, if there exists x such that ∇k(x) · vˆ = 1 and, at the same time, also satisfies
+∇k(x) k u, then (73) is true with the equal sign. In particular, for the symmetry of (72) and (70)
+we shall consider
+lq ≈
+1
+2 max
+x∈Ω
+||∇k|| .
+Acknowledgments The authors would like to thank Prof. Luigi Preziosi for fruitful discussions and valuable comments. This work was partially supported by Istituto Nazionale di Alta
+Matematica, Ministry of Education, Universities and Research, through the MIUR grant Dipartimento di Eccellenza 2018-2022, Project no. E11G18000350001, and the Scientific Reseach Programmes of Relevant National Interest project n. 2017KL4EF3. NL also acknowledges Compagnia
+di San Paolo. This research was also partially supported by the Basque Government through the
+BERC 2018- 2021 program and by the Spanish State Research Agency through BCAM Severo
+Ochoa excellence accreditation SEV-2017-0718. MC has received funding from the European
+Unions Horizon 2020 research and innovation programme under the Marie Skodowska- Curie grant
+agreement No. 713673. The project that gave rise to these results received the support of a fellowship from la Caixa Foundation (ID 100010434). The fellowship code is LCF/BQ/IN17/116
+References
+[1] Y. Azimzade, A. A. Saberi, and M. Sahimi. Regulation of migration of chemotactic tumor
+cells by the spatial distribution of collagen fiber orientation. Phys. Rev. E, 99:062414, 2019.
+[2] H. C. Berg. Random Walks in Biology. Princeton University Press, revised edition, 1983.
+[3] H. C. Berg and E. M. Purcell. Physics of chemoreception. Biophys. J., 20(2):193–219, 1977.
+[4] M. Bisi, J. A. Carrillo, and B. Lods. Equilibrium solution to the inelastic boltzmann equation
+driven by a particle bath. J. Stat. Phys., 133(5):841–870, 2008.
+[5] S. M. Block, J. E. Segall, and H. C. Berg. Adaptation kinetics in bacterial chemotaxis. J.
+Bacteriol. Res., 154(1):312–323, 1983.
+[6] B. A. Bromberek, P. A. J. Enever, D. I. Shreiber, M. D. Caldwell, and R. T. Tranquillo.
+Macrophages influence a competition of contact guidance and chemotaxis for fibroblast alignment in a fibrin gel coculture assay. Exp. Cell Res., 275(2):230–242, 2002.
+[7] F. A. C. C. Chalub, P. A. Markowich, B. Perthame, and C. Schmeiser. Kinetic models for
+chemotaxis and their drift-diffusion limits. Monatsh. Math., 142(1):123–141, 2004.
+[8] A. Chauviere, T. Hillen, and L. Preziosi. Modeling cell movement in anisotropic and heterogeneous network tissues. Netw. Heterog. Media, 2(2):333–351, 2007.
+[9] A. Chauviere, T. Hillen, and L. Preziosi. Modeling the motion of a cell population in the
+extracellular matrix. Discrete Cont. Dyn.-B, 2007(Supplemental volume):250–259, 2007.
+[10] L. Chen, K. J. Painter, C. Surulescu, and A. Zhigun. Mathematical models for cell migration:
+a nonlocal perspective. arXiv preprint arXiv:1911.05200, 2019.
+[11] A. Colombi, M. Scianna, and L. Preziosi. Coherent modelling switch between pointwise and
+distributed representations of cell aggregates. J. Math. Biol., 74(4):783–808, 2017.
+[12] A. Colombi, M. Scianna, and A. Tosin. Differentiated cell behavior: a multiscale approach
+using measure theory. J. Math. Biol., 71:1049–1079, 2015.
+[13] M. Conte, L. Gerardo-Giorda, and M. Groppi. Glioma invasion and its interplay with nervous
+tissue and therapy: A multiscale model. J. Theo. Biol., 486:110088, 2020.
+[14] E. Di Costanzo, M. Menci, E. Messina, R. Natalini, and A. Vecchio. A hybrid model of
+collective motion of discrete particles under alignment and continuum chemotaxis. Discrete
+Cont. Dyn.-B, 25:443–472, 2020.
+[15] R. Dickinson and R. T. Tranquillo. Stochastic model of biased cell migration based on binding
+fluctuations of adhesion receptors. J. Math. Biol., 19:563–600, 1991.
+[16] R. B. Dickinson. A generalized transport model for biased cell migration in an anisotropic
+environment. J. Math. Biol., 40(2):97–135, 2000.
+[17] R. Eftimie. Hyperbolic and kinetic models for self-organized biological aggregations and
+movement: a brief review. J. Math. Biol., 65(1):35–75, 2012.
+[18] C. Engwer, T. Hillen, M. Knappitsch, and C. Surulescu. Glioma follow white matter tracts:
+a multiscale dti-based model. J. Math. Biol., 71(3):551–582, 2015.
+[19] C. Engwer, M. Knappitsch, and C. Surulescu. A multiscale model for glioma spread including
+cell-tissue interactions and proliferation. Math. Biosci. Eng., 13:443–460, 2016.
+31
+[20] C. Engwer, C. Stinner, and C. Surulescu. On a structured multiscale model for acid-mediated
+tumor invasion: The effects of adhesion and proliferation. Math. Mod. Meth. Appl. S.,
+27:1355–1390, 2017.
+[21] P. Friedl. Prespecification and plasticity: shifting mechanisms of cell migration. Curr. Opin.
+Cell Biol., 16:1423, 2004.
+[22] P. Friedl and E.-B. Brocker. The biology of cell locomotion within three dimensional extracellular matrix. Cell Mol Life Sci., 57:41–64, 2000.
+[23] R. Gininait, R. E. Baker, P. M. Kulesa, and P. K. Maini. Modelling collective cell migration:
+neural crest as a model paradigm. J. Math. Biol., 80:481–504, 2019.
+[24] T. Hillen. M5 mesoscopic and macroscopic models for mesenchymal motion. J. Math. Biol.,
+53(4):585–616, 2006.
+[25] T. Hillen, A. Murtha, K. J. Painter, and A. Swan. Moments of the von mises and fischer
+distributions and applications. Math. Biosci. Eng., 14(3):673–694, 2017.
+[26] T. Hillen and H. G. Othmer. The diffusion limit of transport equations derived from velocityjump processes. SIAM J. Appl. Math., 61:751–775, 2000.
+[27] T. Hillen and K. J. Painter. A user’s guide to pde models for chemotaxis. J. Math. Biol.,
+58(1):183–217, 2008.
+[28] J. Johnson, M. O. Nowicki, C. H. Lee, E. A. Chiocca, M. S. Viapiano, S. E. Lawler, and J. J
+Lannutti. Quantitative analysis of complex glioma cell migration on electrospun polycaprolactone using time-lapse microscopy. Tissue Eng. Part C-Me, 15(4):531–540, 2009.
+[29] E. F. Keller and L. A. Segel. Initiation of slime mold aggregation viewed as an instability. J.
+Theo. Biol., 26(3):399–415, 1970.
+[30] P. J. Kevin. Mathematical models for chemotaxis and their applications in self-organisation
+phenomena. J. Theor. Biol., 481:162–182, 2019.
+[31] P. J. Kevin, P. K. Maini, and H. G. Othmer. Development and applications of a model for
+cellular response to multiple chemotactic cues. J. Math. Biol., 41(4):285–314, 2000.
+[32] N. Kolbe, N. Sfakianakis, C. Stinner, C. Surulescu, and J. Lenz. Modeling multiple taxis:
+tumor invasion with phenotypic heterogeneity, haptotaxis, and unilateral interspecies repellence. arXiv preprint arXiv:2005.01444, 2020.
+[33] A. Laforgia and P. Natalini. Some inequalities for modified bessel functions. J. Inequal. Appl.,
+2010(1):253035, 2010.
+[34] L. Lara and I. Schneider. Directed cell migration in multi-cue environments. Integr. Biol.,
+5(11):1306–1323, 2013.
+[35] B. Lods. Semigroup generation propertiesof streaming operators with noncontractive boundary conditions. Math. Comput. Model., 42:1441–1462, 2005.
+[36] N. Loy and L. Preziosi. Kinetic models with non-local sensing determining cell polarization
+and speed according to independent cues. J. Math. Biol., 80:373–421, 2019.
+[37] N. Loy and L. Preziosi. Modelling physical limits of migration by a kinetic model with
+non-local sensing. J. Math. Biol., 2019. In Press.
+[38] G. Maheshwari, A. Wells, L. G. Griffith, and D. A. Lauffenburger. Biophysical integration
+of effects of epidermal growth factor and fibronectin on fibroblast migration. Biophys. J.,
+76(5):2814–2823, 1999.
+32
+[39] K. V. Mardia and P. E. Jupp. Directional statistics, volume 494. John Wiley & Sons, 2009.
+[40] H. Othmer and T. Hillen. The diffusion limit of transport equations ii: Chemotaxis equations.
+SIAM J. Appl. Math., 62:1222–1250, 2002.
+[41] H. Othmer and A. Stevens. Aggregation, blowup, and collapse: The ABC’s of taxis in
+reinforced random walks. SIAM J. Appl. Math., 57:1044–1081, 2001.
+[42] H. G. Othmer, S. R. Dunbar, and W. Alt. Models of dispersal in biological systems. J. Math.
+Biol., 26(3):263–298, 1988.
+[43] K. J. Painter. Modelling cell migration strategies in the extracellular matrix. J. Math. Biol.,
+58(4):511–543, 2008.
+[44] K. J. Painter and T. Hillen. Transport and anisotropic diffusion models for movement in
+oriented habitats, volume 2071, pages 177–222. Lect. Notes Math., Springer - verlag -, 2013.
+[45] A. Palcewski. Velocity averaging for boundary value problems, pages 1–284. Ser. Adv. Math.
+Appl. Sci. World Scientific Publishing Company, 1992.
+[46] R. Pettersson. On solutions to the Linear Boltzmann equation for granular gases. Transport
+Theor. Stat., 33(5-7):527–543, 2004.
+[47] R. G. Plaza. Derivation of a bacterial nutrient-taxis system with doubly degenerate crossdiffusion as the parabolic limit of a velocity-jump process. J. Math. Biol., 78(6):1681–1711,
+2019.
+[48] K. E. Pourfarhangi, E. Hoz, A. Cohen, and B. Gligorijevic. Contact guidance is cell cycledependent. APL Bioeng., 2:031904, 2018.
+[49] P. P. Provenzano, K. W. Eliceiri, J. M. Campbell, and et al. Collagen reorganization at the
+tumor-stromal interface facilitates local invasion. BMC Med., 4(1):38, 2006.
+[50] P. P. Provenzano, K. W. Eliceiri, and P. J. Keely. Shining new light on 3d cell motility and
+the metastatic process. Trends Cell Biol., 19(11):638–648, 2009.
+[51] A. M. Rajnicek, L. E. Foubister, and C. D. McCaig. Prioritising guidance cues: Directional migration induced by substratum contours and electrical gradients is controlled by a
+rho/cdc42 switch. Dev. Biol., 312(1):448–460, 2007.
+[52] S. W. Rhee, A. M. Taylor, C. H. Tu, D. H. Cribbs, C. Cotman, and N. Li Jeon. Patterned
+cell culture inside microfluidic devices. Lab Chip, 51:102–107, 2005.
+[53] D. Schlter, I. Ramis-Conde, and M. Chaplain. Computational modeling of single-cell migration: The leading role of extracellular matrix fibers. Biophys. J., 103:1141–51, 2012.
+[54] M. Scianna, L. Preziosi, and K. Wolf. A cellular potts model simulating cell migration on
+and in matrix environments. Math. Biosci. Eng., 10:235–261, 2013.
+[55] P. Steeg. Targeting metastasis. Nat. Rev. Cancer., 16:201–218, 2016.
+[56] D. W. Stroock. Some stochastic processes which arise from a model of the motion of a
+bacterium. Z. Wahrscheinlichkeit, 28(4):305–315, 1974.
+[57] H. Sundararaghavan, R. Saunders, D. Hammer, and J. Burdick. Fiber alignment directs cell
+motility over chemotactic gradients. Biotechnol. Bioeng., 110(4):1249–1254, 2013.
+[58] M. A. Wagle and R. T. Tranquillo. A self-consistent cell flux expression for simultaneous
+chemotaxis and contact guidance in tissues. J. Math. Biol., 41(4):315–330, 2000.
+33
+[59] P. C. Wilkinson and J. M. Lackie. The influence of contact guidance on chemotaxis of human
+neutrophil leukocytes. Exp. Cell Res., 145(2):255–264, 1983.
+[60] K. Wolf, I. Mazo, H. Leung, K. Engelke, U. H. von Andrian, E. I. Deryugina, A. Y. Strongin, E.-B. Br¨ocker, and P. Friedl. Compensation mechanism in tumor cell migration: mesenchymalamoeboid transition after blocking of pericellular proteolysis. Int. J. Cell Biol.,
+160(2):267–277, 2003.
+34
