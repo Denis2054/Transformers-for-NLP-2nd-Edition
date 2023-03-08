@@ -49,7 +49,7 @@ To run these notebooks on a cloud platform, just click on one of the badges in t
 
 Implement models, such as BERT, Reformer, and T5, that outperform classical language models<br>
 Compare NLP applications using GPT-3, GPT-2, and other transformers<br>
-Analyze advanced use cases, including polysemy, cross-lingual learning, and computer vision<br>
+Analyze advanced use cases, including polysemy, cross-lingual learning, and computer vision. A GitHub BONUS directory with SOA ChatGPT and DALL-E notebooks. <br>
 
 ## Book Description
 Transformers are a game-changer for natural language understanding (NLU) and have become one of the pillars of artificial intelligence.<br>
