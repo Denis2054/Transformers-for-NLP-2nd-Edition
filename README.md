@@ -54,7 +54,7 @@ Analyze advanced use cases, including polysemy, cross-lingual learning, and comp
 ## Book Description
 Transformers are a game-changer for natural language understanding (NLU) and have become one of the pillars of artificial intelligence.<br>
 
-Transformers for Natural Language Processing, 2nd Edition, investigates deep learning for machine translations, speech-to-text, text-to-speech, language modeling, question-answering, and many more NLP domains with transformers.<br>
+Transformers for Natural Language Processing, 2nd Edition, investigates deep learning for machine translations, language modeling, question-answering, and many more NLP domains with transformers.<br>
 
 An Industry 4.0 AI specialist needs to be adaptable; knowing just one NLP platform is not enough anymore. Different platforms have different benefits depending on the application, whether it's cost, flexibility, ease of implementation, results, or performance. In this book, we analyze numerous use cases with Hugging Face, Google Trax, OpenAI, and AllenNLP.<br>
 
