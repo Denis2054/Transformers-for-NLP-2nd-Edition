@@ -3,7 +3,7 @@
 <table class="noBorder">
   <tr>
     <td width="50%" height="50%"> 
-      <img src="https://github.com/Denis2054/Transformers-for-NLP-2nd-Edition/blob/main/Bonus/Page1.JPG">
+      <img src="https://github.com/Denis2054/Transformers-for-NLP-2nd-Edition/blob/main/Bonus/Transformers.JPG">
     </td>
     <td valign="top">
       <H2>Features</H2>
