@@ -20,16 +20,22 @@
  
 ### 1. [Jump_Starting_ChatGPT_with_the_OpenAI_API.ipynb](https://github.com/Denis2054/Transformers-for-NLP-2nd-Edition/blob/main/Bonus/Jump_Starting_ChatGPT_with_the_OpenAI_API.ipynb) [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Denis2054/Transformers-for-NLP-2nd-Edition/blob/main/Bonus/Jump_Starting_ChatGPT_with_the_OpenAI_API.ipynb) [![Kaggle](https://kaggle.com/static/images/open-in-kaggle.svg)](https://kaggle.com/kernels/welcome?src=https://github.com/Denis2054/Transformers-for-NLP-2nd-Edition/blob/main/Bonus/Jump_Starting_ChatGPT_with_the_OpenAI_API.ipynb)
 
-Get started with a ChatGPT API in a few lines of code.
+Get started with a ChatGPT API in a few lines of code. **Note**: For this notebook and all OpenAI notebooks, if you encounter a problem installing OpenAI try upgrading pip. First run: !pip install --upgrade pip. Then run !pip install openai.
+
 
 ### 2. [Prompt_Engineering_as_an_alternative_to_fine_tuning.ipynb](https://github.com/Denis2054/Transformers-for-NLP-2nd-Edition/blob/main/Bonus/Prompt_Engineering_as_an_alternative_to_fine_tuning.ipynb) [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Denis2054/Transformers-for-NLP-2nd-Edition/blob/main/Bonus/Prompt_Engineering_as_an_alternative_to_fine_tuning.ipynb) [![Kaggle](https://kaggle.com/static/images/open-in-kaggle.svg)](https://kaggle.com/kernels/welcome?src=https://github.com/Denis2054/Transformers-for-NLP-2nd-Edition/blob/main/Bonus/Prompt_Engineering_as_an_alternative_to_fine_tuning.ipynb)
 
 Fine-tuning is not always possible nor is it always necessary.
 Learn how advanced prompt engineering can help you customize ChatGPT for your project.
 
-### 3. [Speaking_with_ChatGPT.ipynb](https://github.com/Denis2054/Transformers-for-NLP-2nd-Edition/blob/main/Bonus/Speaking_with_ChatGPT.ipynb) [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Denis2054/Transformers-for-NLP-2nd-Edition/blob/main/Bonus/Speaking_with_ChatGPT.ipynb.ipynb) [![Kaggle](https://kaggle.com/static/images/open-in-kaggle.svg)](https://kaggle.com/kernels/welcome?src=https://github.com/Denis2054/Transformers-for-NLP-2nd-Edition/blob/main/Bonus/Speaking_with_ChatGPT.ipynb.ipynb)
+### 3.1. [Speaking_with_ChatGPT.ipynb](https://github.com/Denis2054/Transformers-for-NLP-2nd-Edition/blob/main/Bonus/Speaking_with_ChatGPT.ipynb) [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Denis2054/Transformers-for-NLP-2nd-Edition/blob/main/Bonus/Speaking_with_ChatGPT.ipynb.ipynb) [![Kaggle](https://kaggle.com/static/images/open-in-kaggle.svg)](https://kaggle.com/kernels/welcome?src=https://github.com/Denis2054/Transformers-for-NLP-2nd-Edition/blob/main/Bonus/Speaking_with_ChatGPT.ipynb.ipynb)
 
-Add speech-to-text and text-to-speech to ChatGPT.
+Add speech-to-text and text-to-speech to ChatGPT. A step-by-step proces.
+
+### 3.2. [Dialog_with_ChatGPT.ipynb](https://github.com/Denis2054/Transformers-for-NLP-2nd-Edition/blob/main/Bonus/Dialog_with_ChatGPT.ipynb)
+
+A speech-to-text and text-to-speech to ChatGPT. A one-click function to create an indefinte dialog with ChatGPT(keep an eye on your OpenAI token budget
+
 
 ### 4. [ChatGPT_as_a_Cobot_ChatGPT_versus_davinci_instruct.ipynb](https://github.com/Denis2054/Transformers-for-NLP-2nd-Edition/blob/main/Bonus/ChatGPT_as_a_Cobot_ChatGPT_versus_davinci_instruct.ipynb) [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Denis2054/Transformers-for-NLP-2nd-Edition/blob/main/Bonus/ChatGPT_as_a_Cobot_ChatGPT_versus_davinci_instruct.ipynb) [![Kaggle](https://kaggle.com/static/images/open-in-kaggle.svg)](https://kaggle.com/kernels/welcome?src=https://github.com/Denis2054/Transformers-for-NLP-2nd-Edition/blob/main/Bonus/ChatGPT_as_a_Cobot_ChatGPT_versus_davinci_instruct.ipynb)
 
