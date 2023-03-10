@@ -30,7 +30,7 @@ Learn how advanced prompt engineering can help you customize ChatGPT for your pr
 
 ### 3.1. [Speaking_with_ChatGPT.ipynb](https://github.com/Denis2054/Transformers-for-NLP-2nd-Edition/blob/main/Bonus/Speaking_with_ChatGPT.ipynb) [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Denis2054/Transformers-for-NLP-2nd-Edition/blob/main/Bonus/Speaking_with_ChatGPT.ipynb.ipynb) [![Kaggle](https://kaggle.com/static/images/open-in-kaggle.svg)](https://kaggle.com/kernels/welcome?src=https://github.com/Denis2054/Transformers-for-NLP-2nd-Edition/blob/main/Bonus/Speaking_with_ChatGPT.ipynb.ipynb)
 
-Add speech-to-text and text-to-speech to ChatGPT. A step-by-step proces.
+Add speech-to-text and text-to-speech to ChatGPT. A step-by-step process.
 
 ### 3.2. [Dialog_with_ChatGPT.ipynb](https://github.com/Denis2054/Transformers-for-NLP-2nd-Edition/blob/main/Bonus/Dialog_with_ChatGPT.ipynb)
 
