@@ -28,7 +28,7 @@ Get started with a ChatGPT API in a few lines of code. **Note**: For this notebo
 Fine-tuning is not always possible nor is it always necessary.
 Learn how advanced prompt engineering can help you customize ChatGPT for your project.
 
-### 3.1. [Speaking_with_ChatGPT.ipynb](https://github.com/Denis2054/Transformers-for-NLP-2nd-Edition/blob/main/Bonus/Speaking_with_ChatGPT.ipynb) [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Denis2054/Transformers-for-NLP-2nd-Edition/blob/main/Bonus/Speaking_with_ChatGPT.ipynb.ipynb) [![Kaggle](https://kaggle.com/static/images/open-in-kaggle.svg)](https://kaggle.com/kernels/welcome?src=https://github.com/Denis2054/Transformers-for-NLP-2nd-Edition/blob/main/Bonus/Speaking_with_ChatGPT.ipynb.ipynb)
+### 3.1. [Speaking_with_ChatGPT.ipynb](https://github.com/Denis2054/Transformers-for-NLP-2nd-Edition/blob/main/Bonus/Speaking_with_ChatGPT.ipynb) [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Denis2054/Transformers-for-NLP-2nd-Edition/blob/main/Bonus/Speaking_with_ChatGPT.ipynb) [![Kaggle](https://kaggle.com/static/images/open-in-kaggle.svg)](https://kaggle.com/kernels/welcome?src=https://github.com/Denis2054/Transformers-for-NLP-2nd-Edition/blob/main/Bonus/Speaking_with_ChatGPT.ipynb)
 
 Add speech-to-text and text-to-speech to ChatGPT. A step-by-step process.
 
