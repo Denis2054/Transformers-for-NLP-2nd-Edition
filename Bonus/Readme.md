@@ -32,7 +32,7 @@ Learn how advanced prompt engineering can help you customize ChatGPT for your pr
 
 Add speech-to-text and text-to-speech to ChatGPT. A step-by-step process.
 
-### 3.2. [Dialog_with_ChatGPT.ipynb](https://github.com/Denis2054/Transformers-for-NLP-2nd-Edition/blob/main/Bonus/Dialog_with_ChatGPT.ipynb)
+### 3.2. [Dialog_with_ChatGPT.ipynb](https://github.com/Denis2054/Transformers-for-NLP-2nd-Edition/blob/main/Bonus/Dialog_with_ChatGPT.ipynb)[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Denis2054/Transformers-for-NLP-2nd-Edition/blob/main/Bonus/Dialog_with_ChatGPT.ipynb)
 
 A speech-to-text and text-to-speech to ChatGPT. A one-click function to create an indefinte dialog with ChatGPT(keep an eye on your OpenAI token budget!)
 
