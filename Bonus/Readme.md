@@ -32,11 +32,11 @@ Learn how advanced prompt engineering can help you customize ChatGPT for your pr
 
 Add speech-to-text and text-to-speech to ChatGPT. A step-by-step process.
 
-### 3.2. [Dialog_with_ChatGPT.ipynb](https://github.com/Denis2054/Transformers-for-NLP-2nd-Edition/blob/main/Bonus/Dialog_with_ChatGPT.ipynb) [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Denis2054/Transformers-for-NLP-2nd-Edition/blob/main/Bonus/Dialog_with_ChatGPT.ipynb)
+### 3.2. [Dialog_with_ChatGPT.ipynb](https://github.com/Denis2054/Transformers-for-NLP-2nd-Edition/blob/main/Bonus/Dialog_with_ChatGPT.ipynb) [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Denis2054/Transformers-for-NLP-2nd-Edition/blob/main/Bonus/Dialog_with_ChatGPT.ipynb) [![Kaggle](https://kaggle.com/static/images/open-in-kaggle.svg)](https://kaggle.com/kernels/welcome?src=https://github.com/Denis2054/Transformers-for-NLP-2nd-Edition/blob/main/Bonus/Dialog_with_ChatGPT.ipynb)
 
 A speech-to-text and text-to-speech to ChatGPT. A one-click function to create an indefinte dialog with ChatGPT(keep an eye on your OpenAI token budget!)
 
-### 3.3. [Whisper_&_gttS.ipynb](https://github.com/Denis2054/Transformers-for-NLP-2nd-Edition/blob/main/Bonus/Whisper_%26_gttS.ipynb)  [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Denis2054/Transformers-for-NLP-2nd-Edition/blob/main/Bonus/Whisper_&_gttS.ipynb)
+### 3.3. [Whisper_&_gttS.ipynb](https://github.com/Denis2054/Transformers-for-NLP-2nd-Edition/blob/main/Bonus/Whisper_%26_gttS.ipynb)  [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Denis2054/Transformers-for-NLP-2nd-Edition/blob/main/Bonus/Whisper_&_gttS.ipynb) [![Kaggle](https://kaggle.com/static/images/open-in-kaggle.svg)](https://kaggle.com/kernels/welcome?src=https://github.com/Denis2054/Transformers-for-NLP-2nd-Edition/blob/main/Bonus/Whisper_&_gttS.ipynb)
 
 gTTS(Google text-to-speech) and Whisper(OpenAI speech-to-text) tools to enhance and use in your conversational AI applications(ChatGPT, davinci, other).
 
