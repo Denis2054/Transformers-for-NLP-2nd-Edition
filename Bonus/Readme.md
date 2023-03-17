@@ -57,6 +57,6 @@ A Scientific approach to transformers.
 
 DALL-E will take you into the wonderful world of creative image generation. Get started with DALL-E API to create, modify or generate variations of an image.
 
-### 10. [Getting_Started_with_GPT-4.ipynb](https://github.com/Denis2054/Transformers-for-NLP-2nd-Edition/blob/main/Bonus/Getting_Started_with_GPT-4.ipynb) [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Denis2054/Transformers-for-NLP-2nd-Edition/blob/main/Bonus/Getting_Started_with_GPT-4.ipynb) [![Kaggle](https://kaggle.com/static/images/open-in-kaggle.svg)](https://kaggle.com/kernels/welcome?src=https://github.com/Denis2054/Transformers-for-NLP-2nd-Edition/blob/main/Bonus/Getting_Started_with_GPT-4.ipynb)
+### 10. [Getting_Started_with_GPT_4.ipynb](https://github.com/Denis2054/Transformers-for-NLP-2nd-Edition/blob/main/Bonus/Getting_Started_with_GPT_4.ipynb) [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Denis2054/Transformers-for-NLP-2nd-Edition/blob/main/Bonus/Getting_Started_with_GPT_4.ipynb) [![Kaggle](https://kaggle.com/static/images/open-in-kaggle.svg)](https://kaggle.com/kernels/welcome?src=https://github.com/Denis2054/Transformers-for-NLP-2nd-Edition/blob/main/Bonus/Getting_Started_with_GPT_4.ipynb)
 
 This notebook shows you how to generate programs with GPT-4 and obtain explanations on the SOA GPT models.
