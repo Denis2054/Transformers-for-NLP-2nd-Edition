@@ -18,10 +18,44 @@
  
  ## Notebooks
  
+Here are some tips to get started:
+
+1.To use the OpenAI:
+Install Openai. Make sure you have the latest version of pip:
+<pre>
+```python
+!pip install --upgrade pip
+!pip install openai.
+'''
+</pre>
+ 
+2.Make sure to obtain an API key from OpenAI
+
+3.March 2023. ChatGPT is available as GPT-3.5-turbo and GPT-4
+You can try either version by specifyling the name of model directly in your code.
+as in notebook #4, *Dialog_with_ChatGPT*
+Or you can modify the notebooks for your project and add the model as a parameter to call the dialog function:
+<pre>
+```python
+#1.Choose a model that you will use for dialog function in your admin user interface:
+#convmodel="gpt-3.5-turbo"
+#convmodel="gpt-4"
+#2.Call the dialog function with the model you need for a specific task
+
+def dialog(iprompt,convmodel):
+    response = openai.ChatCompletion.create(
+        model=convmodel,
+        messages=iprompt
+    )
+    return response
+ '''
+</pre>
+
+You can also run GPT-3, GPT-3.5-turbo, and GPT-4 in the same notebook to compare the outputs and see which model is the best for a project. For that go to notebook #11, *Exploring_GPT_4_API*
+ 
 ### 1. [Jump_Starting_ChatGPT_with_the_OpenAI_API.ipynb](https://github.com/Denis2054/Transformers-for-NLP-2nd-Edition/blob/main/Bonus/Jump_Starting_ChatGPT_with_the_OpenAI_API.ipynb) [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Denis2054/Transformers-for-NLP-2nd-Edition/blob/main/Bonus/Jump_Starting_ChatGPT_with_the_OpenAI_API.ipynb) [![Kaggle](https://kaggle.com/static/images/open-in-kaggle.svg)](https://kaggle.com/kernels/welcome?src=https://github.com/Denis2054/Transformers-for-NLP-2nd-Edition/blob/main/Bonus/Jump_Starting_ChatGPT_with_the_OpenAI_API.ipynb)
 
-Get started with a ChatGPT API in a few lines of code. **Note**: For this notebook and all OpenAI notebooks, if you encounter a problem installing OpenAI try upgrading pip. First run: !pip install --upgrade pip. Then run !pip install openai.
-
+Get started with a ChatGPT API in a few lines of code.
 
 ### 2. [Prompt_Engineering_as_an_alternative_to_fine_tuning.ipynb](https://github.com/Denis2054/Transformers-for-NLP-2nd-Edition/blob/main/Bonus/Prompt_Engineering_as_an_alternative_to_fine_tuning.ipynb) [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Denis2054/Transformers-for-NLP-2nd-Edition/blob/main/Bonus/Prompt_Engineering_as_an_alternative_to_fine_tuning.ipynb) [![Kaggle](https://kaggle.com/static/images/open-in-kaggle.svg)](https://kaggle.com/kernels/welcome?src=https://github.com/Denis2054/Transformers-for-NLP-2nd-Edition/blob/main/Bonus/Prompt_Engineering_as_an_alternative_to_fine_tuning.ipynb)
 
