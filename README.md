@@ -19,10 +19,7 @@ You can run these notebooks on cloud platforms like [Google Colab](https://colab
 ### Running on a cloud platform
 
 
-
 To run these notebooks on a cloud platform, just click on one of the badges in the table below:
-
-
 
 | Chapter | Colab | Kaggle | Gradient | StudioLab |
 | :-------- | :-------- | :------- |:------- |:------- |
@@ -46,9 +43,44 @@ To run these notebooks on a cloud platform, just click on one of the badges in t
 
 ## OpenAI Bonus directory including ChatGPT-3.5-Turbo, GPT-4, and DALL-E
 
+Here are some tips to get started.
+
+1.To use the OpenAI:
+Install Openai. Make sure you have the latest version of pip:
+<pre>
+```python
+!pip install --upgrade pip
+!pip install openai.
+'''
+</pre>
+ 
+2.Make sure to obtain an API key from OpenAI
+
+3.March 2023. ChatGPT is available as GPT-3.5-turbo and GPT-4
+You can try either version by specifyling the name of model directly in your code.
+as in notebook #4, *Dialog_with_ChatGPT*
+Or you can modify the notebooks for your project and add the model as a parameter to call the dialog function:
+<pre>
+```python
+#1.Choose a model that you will use for dialog function in your admin user interface:
+#convmodel="gpt-3.5-turbo"
+#convmodel="gpt-4"
+#2.Call the dialog function with the model you need for a specific task
+
+def dialog(iprompt,convmodel):
+    response = openai.ChatCompletion.create(
+        model=convmodel,
+        messages=iprompt
+    )
+    return response
+ '''
+</pre>
+
+You can also run GPT-3, GPT-3.5-turbo, and GPT-4 in the same notebook to compare the outputs and see which model is the best for a project. For that go to notebook #11, *Exploring_GPT_4_API*
+
 | Bonus | Colab | Kaggle | Gradient | SageMaker Studio Lab |
 | ----- | ----- | ------ | -------- | ------------------- |
-| [Readme](https://github.com/Denis2054/Transformers-for-NLP-2nd-Edition/blob/main/Bonus/Readme.md) | | | | |
+| | | | | |
 | Q&A_DR.ipynb | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Denis2054/Transformers-for-NLP-2nd-Edition/blob/main/Bonus/Q%26A_DR.ipynb) | [![Kaggle](https://kaggle.com/static/images/open-in-kaggle.svg)](https://kaggle.com/kernels/welcome?src=https://github.com/Denis2054/Transformers-for-NLP-2nd-Edition/blob/main/Bonus/Q%26A_DR.ipynb) | [![Gradient](https://assets.paperspace.io/img/gradient-badge.svg)](https://console.paperspace.com/github/Denis2054/Transformers-for-NLP-2nd-Edition/blob/main/Bonus/Q%26A_DR.ipynb) | [![Open In SageMaker Studio Lab](https://studiolab.sagemaker.aws/studiolab.svg)](https://studiolab.sagemaker.aws/import/github/Denis2054/Transformers-for-NLP-2nd-Edition/blob/main/Bonus/Q%26A_DR.ipynb) |
 | GPT_2_&_ ChatGPT_the_Origins.ipynb | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Denis2054/Transformers-for-NLP-2nd-Edition/blob/main/Bonus/GPT_2_&_ChatGPT_the_Origins.ipynb) | [![Kaggle](https://kaggle.com/static/images/open-in-kaggle.svg)](https://kaggle.com/kernels/welcome?src=https://github.com/Denis2054/Transformers-for-NLP-2nd-Edition/blob/main/Bonus/GPT_2_&_ChatGPT_the_Origins.ipynb) | [![Gradient](https://assets.paperspace.io/img/gradient-badge.svg)](https://console.paperspace.com/github/Denis2054/Transformers-for-NLP-2nd-Edition/blob/main/Bonus/GPT_2_&_ChatGPT_the_Origins.ipynb) | [![Open In SageMaker Studio Lab](https://studiolab.sagemaker.aws/studiolab.svg)](https://studiolab.sagemaker.aws/import/github/Denis2054/Transformers-for-NLP-2nd-Edition/blob/main/Bonus/GPT_2_&_ChatGPT_the_Origins.ipynb) |
 | Generating_images_with_the_OpenAI_DALL_E_API.ipynb | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Denis2054/Transformers-for-NLP-2nd-Edition/blob/main/Bonus/Generating_images_with_the_OpenAI_DALL_E_API.ipynb) | [![Kaggle](https://kaggle.com/static/images/open-in-kaggle.svg)](https://kaggle.com/kernels/welcome?src=https://github.com/Denis2054/Transformers-for-NLP-2nd-Edition/blob/main/Bonus/Generating_images_with_the_OpenAI_DALL_E_API.ipynb) | [![Gradient](https://assets.paperspace.io/img/gradient-badge.svg)](https://console.paperspace.com/github/Denis2054/Transformers-for-NLP-2nd-Edition/blob/main/Bonus/Generating_images_with_the_OpenAI_DALL_E_API.ipynb) | [![Open In SageMaker Studio Lab](https://studiolab.sagemaker.aws/studiolab.svg)](https://studiolab.sagemaker.aws/import/github/Denis2054/Transformers-for-NLP-2nd-Edition/blob/main/Bonus/Generating_images_with_the_OpenAI_DALL_E_API.ipynb) |
