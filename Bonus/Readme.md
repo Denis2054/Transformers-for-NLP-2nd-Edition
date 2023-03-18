@@ -34,7 +34,7 @@ Add speech-to-text and text-to-speech to ChatGPT. A step-by-step process.
 
 ### 4. [Dialog_with_ChatGPT.ipynb](https://github.com/Denis2054/Transformers-for-NLP-2nd-Edition/blob/main/Bonus/Dialog_with_ChatGPT.ipynb) [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Denis2054/Transformers-for-NLP-2nd-Edition/blob/main/Bonus/Dialog_with_ChatGPT.ipynb) [![Kaggle](https://kaggle.com/static/images/open-in-kaggle.svg)](https://kaggle.com/kernels/welcome?src=https://github.com/Denis2054/Transformers-for-NLP-2nd-Edition/blob/main/Bonus/Dialog_with_ChatGPT.ipynb)
 
-A speech-to-text and text-to-speech to ChatGPT. A one-click function to create an indefinte dialog with ChatGPT(keep an eye on your OpenAI token budget!)
+A speech-to-text and text-to-speech to ChatGPT. A one-click function to create an indefinite dialog with ChatGPT(keep an eye on your OpenAI token budget!)
 
 ### 5. [Whisper_&_gttS.ipynb](https://github.com/Denis2054/Transformers-for-NLP-2nd-Edition/blob/main/Bonus/Whisper_%26_gttS.ipynb)  [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Denis2054/Transformers-for-NLP-2nd-Edition/blob/main/Bonus/Whisper_&_gttS.ipynb) [![Kaggle](https://kaggle.com/static/images/open-in-kaggle.svg)](https://kaggle.com/kernels/welcome?src=https://github.com/Denis2054/Transformers-for-NLP-2nd-Edition/blob/main/Bonus/Whisper_&_gttS.ipynb)
 
