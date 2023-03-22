@@ -18,7 +18,7 @@ You can run these notebooks on cloud platforms like [Google Colab](https://colab
 
 
 
-### Acdessing the programs, Running on a cloud platform
+### Running on a cloud platform or in your environement
 
 To run these notebooks on a cloud platform, just click on one of the badges in the table below or run them on your environment.
 
