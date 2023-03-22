@@ -3,6 +3,8 @@
 
 @copyright 2022, 2023, Packt Publishing, Denis Rothman<br>
 
+Last updated on March 23,2023
+
 [Contact me for any question you have on LinkedIn](https://www.linkedin.com/in/denis-rothman-0b034043/)<br>
 [Get the book on Amazon](https://www.amazon.com/Transformers-Natural-Language-Processing-architectures-dp-1803247339/dp/1803247339/ref=mt_other?_encoding=UTF8&me=&qid=)
 
@@ -16,14 +18,15 @@ You can run these notebooks on cloud platforms like [Google Colab](https://colab
 
 
 
-### Acessing the programs, Running on a cloud platform
+### Acdessing the programs, Running on a cloud platform
 
 To run these notebooks on a cloud platform, just click on one of the badges in the table below or run them on your environment.
 
 | Chapter | Colab | Kaggle | Gradient | StudioLab |
 | :-------- | :-------- | :------- |:------- |:------- |
 | | | | | |
-**Chapter 3: What are Transformers?**
+**Chapter 1: What are Transformers?**
+Chapter 1 includes an explanation of how transformers can now perform code completion and produce source code automatically. On March 23, 2023, OpenAI discontinued support for CODEX which is now replaced by ChatGPT 3.5-turbo. For the examples throughout the book, now use OpenAI GPT-3.5-turbo as shown in the following notebook.
 |<ul><li>Generate_Python_source_code_automatically_with_GPT_3_5_Turbo.ipynb</li></ul> | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Denis2054/Transformers-for-NLP-2nd-Edition/blob/main/Chapter01/Generate_Python_source_code_automatically_with_GPT_3_5_Turbo.ipynb) | [![Kaggle](https://kaggle.com/static/images/open-in-kaggle.svg)](https://kaggle.com/kernels/welcome?src=https://github.com/Denis2054/Transformers-for-NLP-2nd-Edition/blob/main/Chapter01/Generate_Python_source_code_automatically_with_GPT_3_5_Turbo.ipynb) | [![Gradient](https://assets.paperspace.io/img/gradient-badge.svg)](https://console.paperspace.com/github/Denis2054/Transformers-for-NLP-2nd-Edition/blob/main/Chapter01/Generate_Python_source_code_automatically_with_GPT_3_5_Turbo.ipynb) | [![Open In SageMaker Studio Lab](https://studiolab.sagemaker.aws/studiolab.svg)](https://studiolab.sagemaker.aws/import/github/Denis2054/Transformers-for-NLP-2nd-Edition/blob/main/Chapter01/Generate_Python_source_code_automatically_with_GPT_3_5_Turbo.ipynb) | 
  **Chapter 2: Getting Started with the Architecture of the Transformer Model**
 | <ul><li>Multi_Head_Attention_Sub_Layer.ipynb</li><li>positional_encoding.ipynb</li></ul> | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Denis2054/Transformers-for-NLP-2nd-Edition/blob/main/Chapter02/Multi_Head_Attention_Sub_Layer.ipynb) [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Denis2054/Transformers-for-NLP-2nd-Edition/blob/main/Chapter02/positional_encoding.ipynb) | [![Kaggle](https://kaggle.com/static/images/open-in-kaggle.svg)](https://kaggle.com/kernels/welcome?src=https://github.com/Denis2054/Transformers-for-NLP-2nd-Edition/blob/main/Chapter02/Multi_Head_Attention_Sub_Layer.ipynb) [![Kaggle](https://kaggle.com/static/images/open-in-kaggle.svg)](https://kaggle.com/kernels/welcome?src=https://github.com/Denis2054/Transformers-for-NLP-2nd-Edition/blob/main/Chapter02/positional_encoding.ipynb) | [![Gradient](https://assets.paperspace.io/img/gradient-badge.svg)](https://console.paperspace.com/github/Denis2054/Transformers-for-NLP-2nd-Edition/blob/main/Chapter02/Multi_Head_Attention_Sub_Layer.ipynb) [![Gradient](https://assets.paperspace.io/img/gradient-badge.svg)](https://console.paperspace.com/github/Denis2054/Transformers-for-NLP-2nd-Edition/blob/main/Chapter02/positional_encoding.ipynb) | [![Open In SageMaker Studio Lab](https://studiolab.sagemaker.aws/studiolab.svg)](https://studiolab.sagemaker.aws/import/github/Denis2054/Transformers-for-NLP-2nd-Edition/blob/main/Chapter02/Multi_Head_Attention_Sub_Layer.ipynb) [![Open In SageMaker Studio Lab](https://studiolab.sagemaker.aws/studiolab.svg)](https://studiolab.sagemaker.aws/import/github/Denis2054/Transformers-for-NLP-2nd-Edition/blob/main/Chapter02/positional_encoding.ipynb) |
