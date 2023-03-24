@@ -58,6 +58,48 @@
         a:hover {
             text-decoration: underline;
         }
+        
+        .chatgpt-animation {
+  display: flex;
+  justify-content: center;
+  margin-top: 2em;
+}
+
+.chatgpt-container {
+  border: 2px solid #1f3a60;
+  border-radius: 10px;
+  background-color: #e0f0ff;
+  padding: 1em;
+  max-width: 600px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.chatgpt-question,
+.chatgpt-answer {
+  animation: fadeInOut 5s ease-in-out infinite;
+  opacity: 0;
+  margin-bottom: 0.5em;
+}
+
+.chatgpt-answer {
+  animation-delay: 2.5s;
+}
+
+@keyframes fadeInOut {
+  0% {
+    opacity: 0;
+  }
+  20% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
     </style>
 </head>
 <body>
@@ -74,6 +116,19 @@
     <a href="https://github.com/Denis2054/Transformers-for-NLP-2nd-Edition">The Book GitHub Repository</a><br>    
     <a href="https://www.linkedin.com/in/denis-rothman-0b034043/">Contact me on LinkedIn</a><br>
     <a href="https://www.amazon.com/Transformers-Natural-Language-Processing-architectures-dp-1803247339/dp/1803247339/ref=mt_other?_encoding=UTF8&me=&qid=">Get the book on Amazon</a>
+        
+       
+   <div class="chatgpt-animation">
+   <div class="chatgpt-container">
+    <div class="chatgpt-question">
+      <p>Question: What is a transformer in NLP?</p>
+    </div>
+    <div class="chatgpt-answer">
+      <p>Answer: A transformer is a deep learning model architecture used in natural language processing tasks for better performance and efficiency.</p>
+    </div>
+  </div>
+</div>
+
 </p>
 </body>
 </html>
