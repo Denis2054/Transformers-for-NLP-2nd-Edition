@@ -99,7 +99,48 @@
     opacity: 0;
   }
 }
+        
+.word-swarm {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  padding: 2em;
+  margin-top: 2em;
+  position: relative;
+  overflow: hidden;
+}
 
+.word {
+  font-size: 1.5em;
+  color: #1f3a60;
+  opacity: 0.8;
+  animation: move 10s linear infinite;
+}
+
+@keyframes move {
+  0% {
+    transform: translateY(100%);
+  }
+  100% {
+    transform: translateY(-100%);
+  }
+}
+
+.word:nth-child(odd) {
+  animation-duration: 12s;
+}
+
+.word:nth-child(2n) {
+  animation-duration: 15s;
+}
+
+.word:nth-child(3n) {
+  animation-duration: 9s;
+}
+
+.word:nth-child(4n) {
+  animation-duration: 7s;
+}
     </style>
 </head>
 <body>
@@ -127,6 +168,20 @@
       <p>Answer: A transformer is a deep learning model architecture used in natural language processing tasks for better performance and efficiency.</p>
     </div>
   </div>
+</div>
+<div class="word-swarm">
+  <span class="word">NLP</span>
+  <span class="word">Transformer</span>
+  <span class="word">GPT-3.5-turbo</span>
+  <span class="word">GPT-4</span>
+  <span class="word">DeBERTa</span>
+  <span class="word">Metaverse</span>
+  <span class="word">Hugging Face</span>
+  <span class="word">OpenAI</span>
+  <span class="word">Trax</span>
+  <span class="word">AllenNLP</span>
+  <span class="word">ChatGPT</span>
+  <span class="word">DALL-E</span>
 </div>
 
 </p>
