@@ -1,7 +1,7 @@
 # Transformers-for-NLP-2nd-Edition
 <img src="https://github.com/Denis2054/Transformers-for-NLP-2nd-Edition/blob/main/Transformers_Rothman.png?raw=tru" alt="drawing" width="400"/>
 
-@copyright 2022, 2023, Packt Publishing, Denis Rothman<br>
+©Copyright 2022, 2023, Denis Rothman, Packt Publishing<br>
 
 Last updated on March 24,2023
 
