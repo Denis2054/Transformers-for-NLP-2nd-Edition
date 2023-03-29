@@ -3,7 +3,7 @@
 
 ©Copyright 2022, 2023, Denis Rothman, Packt Publishing<br>
 
-Last updated on March 24,2023
+Last updated on March 29,2023
 
 Dolphin 🐬 BONUS programs for OpenAI ChatGPT(GPT-3.5 legacy), ChatGPT Plus(GPT-3.5 default, GPT 3.5 default, and GPT-4),  API examples for GPT-3.5-turbo, GPT-4, DALL-E, and advanced prompt engineering. Just look for the Dolphin! Some of the Dolphin 🐬 bonus notebooks are in the Chapters directories of Transformers for NLP, 2nd edition, as add-ons. Some are in the BONUS section. 
 
@@ -13,7 +13,6 @@ Dolphin 🐬 BONUS programs for OpenAI ChatGPT(GPT-3.5 legacy), ChatGPT Plus(GPT
 **Transformer models from BERT to GPT-4, environments from Hugging Face to OpenAI. Fine-tuning, training, and prompt engineering examples. A bonus section with ChatGPT, GPT-3.5-turbo, GPT-4, and DALL-E including jump starting GPT-4, speech-to-text, text-to-speech, text to image generation with DALL-E and more.**
 
 ## Getting started
-
 
 You can run these notebooks on cloud platforms like [Google Colab](https://colab.research.google.com/) or your local machine. Note that some chapters require a GPU to run in a reasonable amount of time, so we recommend one of the cloud platforms as they come pre-installed with CUDA.
 
@@ -61,11 +60,14 @@ To run these notebooks on a cloud platform, just click on one of the badges in t
 **Appendix IV: Custom Text Completion with GPT-2**
 |<ul><li>Training_OpenAI_GPT_2.ipynb</li></ul> | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Denis2054/Transformers-for-NLP-2nd-Edition/blob/main/AppendixIV/Training_OpenAI_GPT_2.ipynb) | [![Kaggle](https://kaggle.com/static/images/open-in-kaggle.svg)](https://kaggle.com/kernels/welcome?src=https://github.com/Denis2054/Transformers-for-NLP-2nd-Edition/blob/main/AppendixIV/Training_OpenAI_GPT_2.ipynb) | [![Gradient](https://assets.paperspace.io/img/gradient-badge.svg)](https://console.paperspace.com/github/Denis2054/Transformers-for-NLP-2nd-Edition/blob/main/AppendixIV/Training_OpenAI_GPT_2.ipynb) | [![Open In SageMaker Studio Lab](https://studiolab.sagemaker.aws/studiolab.svg)](https://studiolab.sagemaker.aws/import/github/Denis2054/Transformers-for-NLP-2nd-Edition/blob/main/AppendixIV/Training_OpenAI_GPT_2.ipynb) |
 
-## OpenAI Bonus directory including ChatGPT(GPT-3.5 legacy), GPT-3.5-turbo(default), GPT-4, DALL-E, and GPT-3 models such as davinci
+## OpenAI Bonus directory including ChatGPT(GPT-3.5 legacy) GPT-3.5-turbo(default), GPT-4, DALL-E, and GPT-3 models such as davinci
 
 **Enjoy the present, explore the future!**
 
 Here are some tips to get started.
+
+Step 0: Sign up on OpenAI to get your API Key.
+        Some examples do not require an OpenAI API Key but it is better to have one to get the most out of the notebooks.
 
 Step 1: Install OpenAI:
 Install Openai. Make sure you have the latest version of pip:
