@@ -61,7 +61,7 @@ To run these notebooks on a cloud platform, just click on one of the badges in t
 **Appendix IV: Custom Text Completion with GPT-2**
 |<ul><li>Training_OpenAI_GPT_2.ipynb</li></ul> | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Denis2054/Transformers-for-NLP-2nd-Edition/blob/main/AppendixIV/Training_OpenAI_GPT_2.ipynb) | [![Kaggle](https://kaggle.com/static/images/open-in-kaggle.svg)](https://kaggle.com/kernels/welcome?src=https://github.com/Denis2054/Transformers-for-NLP-2nd-Edition/blob/main/AppendixIV/Training_OpenAI_GPT_2.ipynb) | [![Gradient](https://assets.paperspace.io/img/gradient-badge.svg)](https://console.paperspace.com/github/Denis2054/Transformers-for-NLP-2nd-Edition/blob/main/AppendixIV/Training_OpenAI_GPT_2.ipynb) | [![Open In SageMaker Studio Lab](https://studiolab.sagemaker.aws/studiolab.svg)](https://studiolab.sagemaker.aws/import/github/Denis2054/Transformers-for-NLP-2nd-Edition/blob/main/AppendixIV/Training_OpenAI_GPT_2.ipynb) |
 
-## OpenAI Bonus directory including ChatGPT-3.5-Turbo, GPT-4, and DALL-E
+## OpenAI Bonus directory including ChatGPT(GPT-3.5 legacy), GPT-3.5-turbo(default), GPT-4, DALL-E, and GPT-3 models such as davinci
 
 **Enjoy the present, explore the future!**
 
