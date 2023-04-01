@@ -5,7 +5,9 @@
 
 Last updated on March 31,2023
 
-Dolphin 🐬 Additional BONUS programs for OpenAI ChatGPT(GPT-3.5 legacy), ChatGPT Plus(GPT-3.5 default, GPT 3.5 default, and GPT-4),  API examples for GPT-3.5-turbo, GPT-4, DALL-E,advanced prompt engineering with the ChatGPT API and the GPT-4 API. 
+Dolphin 🐬 Additional BONUS programs for OpenAI ChatGPT(GPT-3.5 legacy), ChatGPT Plus(GPT-3.5 default, GPT 3.5 default, and GPT-4).
+API examples for GPT-3.5-turbo, GPT-4, DALL-E.
+Advanced prompt engineering with the ChatGPT API and the GPT-4 API. 
 
 Just look for the Dolphin 🐬 and enjoy your ride into the future of AI! 
 
