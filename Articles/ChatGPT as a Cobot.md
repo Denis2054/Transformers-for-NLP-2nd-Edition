@@ -5,10 +5,12 @@
 _by Denis Rothman and ChatGPT_
 
 In this article, I used ChatGPT as a cobot (a collaborative bot). Essentially, ChatGPT was my co-writer for this article.
+
 We (ChatGPT and I) will go through OpenAI davinci-instruct beta, ChatGPT versus davinci-instruct, and explore the lengths of conversational responses.
+
 Before we explore how ChatGPT can be used as a cobot, we'd love your thoughts on how we can improve your learning experience. As a token of appreciation, we're offering a free preview of our exciting new product to 25 participants of the survey.
 
-### [Register me for the FREE preview](https://forms.office.com/pages/responsepage.aspx?id=Dmauk5VIE0SnXsWk3kKcDgGChSA9CgBIjStDVdNraGFUNVJEWDA5VkY3WDdKQUtHSEpST1VTRTRYVC4u&utm_source=all+updates&utm_campaign=c6c3758e23-EMAIL_CAMPAIGN_2023_04_04_04_59&utm_medium=email&utm_term=0_-c6c3758e23-%5bLIST_EMAIL_ID%5d&mc_cid=c6c3758e23&mc_eid=UNIQID&wdLOR=c222C196C-A28E-40E0-9AF3-CD9B5359A7C5)
+### [Register me for the FREE preview](https://forms.office.com/pages/responsepage.aspx?id=Dmauk5VIE0SnXsWk3kKcDprnEUlhTypBud3clxuBkEtUNDFWMEhLQ1NZTEFCNFhVSVNSUlJNREM2Vy4u)
 
 
 Let’s get started.
@@ -25,7 +27,7 @@ Collaboration: ChatGPT can be used as a collaborative tool for programmers, help
 
 Overall, ChatGPT can be a valuable Cobot for programmers, helping them to work more efficiently, learn more effectively, and collaborate more seamlessly.
 
-     Note : Transformers for Natural Language Processing, 2nd Edition, Chapter 7, The Rise of Suprahuman Transformers with GPT-3 Engines describes how to use GPT-3. 
+_Transformers for Natural Language Processing, 2nd Edition, Chapter 7, The Rise of Suprahuman Transformers with GPT-3 Engines describes how to use GPT-3._ 
 
 Let’s import `openai` and use our API key to use davinci-instruct:
 
@@ -168,7 +170,7 @@ There we have it, how to use ChatGPT as a cobot. If you’d like to learn more a
 
 Don't forget to fill in our survey, as we'd love your thoughts on our new product that we're developing. As a token of our appreciation, we're offering a free preview of our exciting new product to 25 participants of the survey.
 
-### [Register me for the FREE preview](https://forms.office.com/pages/responsepage.aspx?id=Dmauk5VIE0SnXsWk3kKcDgGChSA9CgBIjStDVdNraGFUNVJEWDA5VkY3WDdKQUtHSEpST1VTRTRYVC4u&utm_source=all+updates&utm_campaign=c6c3758e23-EMAIL_CAMPAIGN_2023_04_04_04_59&utm_medium=email&utm_term=0_-c6c3758e23-%5bLIST_EMAIL_ID%5d&mc_cid=c6c3758e23&mc_eid=UNIQID&wdLOR=c222C196C-A28E-40E0-9AF3-CD9B5359A7C5)
+### [Register me for the FREE preview](https://forms.office.com/pages/responsepage.aspx?id=Dmauk5VIE0SnXsWk3kKcDprnEUlhTypBud3clxuBkEtUNDFWMEhLQ1NZTEFCNFhVSVNSUlJNREM2Vy4u)
 
 
 
