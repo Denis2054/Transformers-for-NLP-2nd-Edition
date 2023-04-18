@@ -27,7 +27,7 @@ Collaboration: ChatGPT can be used as a collaborative tool for programmers, help
 
 Overall, ChatGPT can be a valuable Cobot for programmers, helping them to work more efficiently, learn more effectively, and collaborate more seamlessly.
 
-_Transformers for Natural Language Processing, 2nd Edition, Chapter 7, The Rise of Suprahuman Transformers with GPT-3 Engines describes how to use GPT-3._ 
+**_Note_**: _Transformers for Natural Language Processing, 2nd Edition, Chapter 7, The Rise of Suprahuman Transformers with GPT-3 Engines describes how to use GPT-3._ 
 
 Let’s import `openai` and use our API key to use davinci-instruct:
 
