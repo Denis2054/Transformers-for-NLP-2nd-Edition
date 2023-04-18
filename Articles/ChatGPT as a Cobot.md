@@ -10,7 +10,7 @@ We (ChatGPT and I) will go through OpenAI davinci-instruct beta, ChatGPT versus 
 
 Before we explore how ChatGPT can be used as a cobot, we'd love your thoughts on how we can improve your learning experience. As a token of appreciation, we're offering a free preview of our exciting new product to 25 participants of the survey.
 
-### [Register me for the FREE preview](https://forms.office.com/pages/responsepage.aspx?id=Dmauk5VIE0SnXsWk3kKcDprnEUlhTypBud3clxuBkEtUNDFWMEhLQ1NZTEFCNFhVSVNSUlJNREM2Vy4u)
+### [Register me for the FREE preview](https://forms.office.com/e/MW7vY1bN2x)
 
 
 Let’s get started.
@@ -170,7 +170,7 @@ There we have it, how to use ChatGPT as a cobot. If you’d like to learn more a
 
 Don't forget to fill in our survey, as we'd love your thoughts on our new product that we're developing. As a token of our appreciation, we're offering a free preview of our exciting new product to 25 participants of the survey.
 
-### [Register me for the FREE preview](https://forms.office.com/pages/responsepage.aspx?id=Dmauk5VIE0SnXsWk3kKcDprnEUlhTypBud3clxuBkEtUNDFWMEhLQ1NZTEFCNFhVSVNSUlJNREM2Vy4u)
+### [Register me for the FREE preview](https://forms.office.com/e/MW7vY1bN2x)
 
 
 
