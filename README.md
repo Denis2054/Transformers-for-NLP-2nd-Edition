@@ -126,6 +126,7 @@ A good understanding of NLP, Python, and deep learning is required to benefit mo
 14.Interpreting Black Box Transformer Models<br>
 15.From NLP to Task-Agnostic Transformer Models<br>
 16.The Emergence of Transformer-Driven Copilots<br>
+17.The Consolidation of Suprahuman Transformers with OpenAI's ChatGPT and GPT-4
 Appendix I: Terminology of Transformer Models<br>
 Appendix II: Hardware Constraints for Transformer Models<br>
 And more!
