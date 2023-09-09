@@ -3,7 +3,7 @@
 
 ©Copyright 2022, 2023, Denis Rothman, Packt Publishing<br>
 
-Last updated: September 3,2023
+Last updated: September 9,2023
 
 Dolphin 🐬 Additional Bonus programs for OpenAI ChatGPT(GPT-3.5 legacy), ChatGPT Plus(GPT-3.5 default, GPT 3.5 default, and GPT-4).<br>
 API examples for GPT-3.5-turbo, GPT-4, DALL-E 2, Google Cloud AI Language, and Google Cloud AI Vision.<br>
