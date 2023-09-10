@@ -1,13 +1,13 @@
 # Transformers-for-NLP-2nd-Edition
 <img src="https://github.com/Denis2054/Transformers-for-NLP-2nd-Edition/blob/main/Transformers_Rothman.png?raw=tru" alt="drawing" width="400"/>
 
-©Copyright 2022, 2023, Denis Rothman, Packt Publishing<br>
+©Copyright 2022-2023, Denis Rothman, Packt Publishing<br>
 
-Last updated: September 9,2023
+Last updated: September 10,2023
 
 Dolphin 🐬 Additional Bonus programs for OpenAI ChatGPT(GPT-3.5 legacy), ChatGPT Plus(GPT-3.5 default, GPT 3.5 default, and GPT-4).<br>
 API examples for GPT-3.5-turbo, GPT-4, DALL-E 2, Google Cloud AI Language, and Google Cloud AI Vision.<br>
-Disover HuggingGPT, Google Smart Compose, Google BARD, and Microsoft's New Bing .<br>
+Discover HuggingGPT, Google Smart Compose, Google BARD, and Microsoft's New Bing .<br>
 Advanced prompt engineering with the ChatGPT API and the GPT-4 API. <br>
 
 Just look for the Dolphin 🐬 and enjoy your ride into the future of AI! 
