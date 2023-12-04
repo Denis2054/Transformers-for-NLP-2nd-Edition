@@ -3,7 +3,7 @@
 
 ©Copyright 2022-2023, Denis Rothman, Packt Publishing<br>
 
-Last updated: November 19,2023
+Last updated: December 4, 2023
 
 Dolphin 🐬 Additional Bonus programs for OpenAI ChatGPT(GPT-3.5 legacy), ChatGPT Plus(GPT-3.5 default, GPT 3.5 default, and GPT-4).<br>
 API examples for GPT-3.5-turbo, GPT-4, DALL-E 2, Google Cloud AI Language, and Google Cloud AI Vision.<br>
@@ -15,13 +15,13 @@ Just look for the Dolphin 🐬 and enjoy your ride into the future of AI!
 [Contact me on  LinkedIn](https://www.linkedin.com/in/denis-rothman-0b034043/)<br>
 [Get the book on Amazon](https://www.amazon.com/Transformers-Natural-Language-Processing-architectures-dp-1803247339/dp/1803247339/ref=mt_other?_encoding=UTF8&me=&qid=)
 
-**Transformer models from BERT to GPT-4, environments from Hugging Face to OpenAI. Fine-tuning, training, and prompt engineering examples. A bonus section with ChatGPT, GPT-3.5-turbo, GPT-4, and DALL-E including jump starting GPT-4, speech-to-text, text-to-speech, text to image generation with DALL-E and more.**
+**Transformer models from BERT to GPT-4, environments from Hugging Face to OpenAI. Fine-tuning, training, and prompt engineering examples. A bonus section with ChatGPT, GPT-3.5-turbo, GPT-4, and DALL-E, including jump-starting GPT-4, speech-to-text, text-to-speech, text-to-image generation with DALL-E and more.**
 
 ## Getting started
 
 You can run these notebooks on cloud platforms like [Google Colab](https://colab.research.google.com/) or your local machine. Note that some chapters require a GPU to run in a reasonable amount of time, so we recommend one of the cloud platforms as they come pre-installed with CUDA.
 
-### Running on a cloud platform or in your environement
+### Running on a cloud platform or in your environment
 
 To run these notebooks on a cloud platform, just click on one of the badges in the table below or run them on your environment.
 
