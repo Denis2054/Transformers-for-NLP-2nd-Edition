@@ -22,12 +22,12 @@ Just look for the Dolphin 🐬 and enjoy your ride into the future of AI!
 You can run these notebooks on cloud platforms like [Google Colab](https://colab.research.google.com/) or your local machine. Note that some chapters require a GPU to run in a reasonable amount of time, so we recommend one of the cloud platforms as they come pre-installed with CUDA.
 
 ## Getting started with OpenAI API
-December 6,2023 update
+December 6,2023. The notebooks in this repository were updated. **Note**: Watch for more changes in 2024 Q1.
 - As of January 4,2024, [OpenAI deprecations](https://platform.openai.com/docs/deprecations) apply to 'davinci'. The recommended replacement is 'davinci-002'
 - Google Colab:  Cohere(language functions) and tiktoken(BPE tokenizer) required to install OpenAI(!pip install tiktoken and !pip install --upgrade cohere)
 - API call changed from openai.Completion.create to openai.completions.create with client= [YOUR OPENAI CLIENT]  
 - API call changed from engine=[model name] to model=[model name]
-- Response print changed from r=response[“choice”][0] \n print(r[“text”]) to print(response.choices[0].text)
+- Response object is evolving. Recommendation: first print response, then analyze object to then access what you need.
 
 ### Running on a cloud platform or in your environment
 
