@@ -78,8 +78,6 @@ To run these notebooks on a cloud platform, just click on one of the badges in t
 |<ul><li>Training_OpenAI_GPT_2.ipynb</li></ul> | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Denis2054/Transformers-for-NLP-2nd-Edition/blob/main/AppendixIV/Training_OpenAI_GPT_2.ipynb) | [![Kaggle](https://kaggle.com/static/images/open-in-kaggle.svg)](https://kaggle.com/kernels/welcome?src=https://github.com/Denis2054/Transformers-for-NLP-2nd-Edition/blob/main/AppendixIV/Training_OpenAI_GPT_2.ipynb) | [![Gradient](https://assets.paperspace.io/img/gradient-badge.svg)](https://console.paperspace.com/github/Denis2054/Transformers-for-NLP-2nd-Edition/blob/main/AppendixIV/Training_OpenAI_GPT_2.ipynb) | [![Open In SageMaker Studio Lab](https://studiolab.sagemaker.aws/studiolab.svg)](https://studiolab.sagemaker.aws/import/github/Denis2054/Transformers-for-NLP-2nd-Edition/blob/main/AppendixIV/Training_OpenAI_GPT_2.ipynb) |
 
 ## Additional OpenAI Bonus Notebooks 
-December 6,2024 information: OpenAI is currently updating its platform. If you encounter issues with the notebooks in this section,read the tips in [changelog of this repository](https://github.com/Denis2054/Transformers-for-NLP-2nd-Edition#getting-started-with-openai-api)
-
 | Bonus | Colab | Kaggle | Gradient | SageMaker Studio Lab |
 | ----- | ----- | ------ | -------- | ------------------- |
 | | | | | |
