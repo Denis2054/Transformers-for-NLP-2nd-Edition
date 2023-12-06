@@ -28,7 +28,7 @@ December 6, 2023. OpenAI is currently updating its platform. If you encounter is
 - API call changed from "openai.Completion.create" to "client.chat.completions.create" with client= [YOUR OPENAI CLIENT]  
 - API call changed from engine=[model name] to model=[model name]
 - Response object is evolving. Recommendation: first print "response", then analyze the object to then access what you need.
-- If the issues persist, you can try to pin the "older" OpenAI version : !pip install openai==0.28
+- If the issues persist, you can try to pin a previous OpenAI version : !pip install openai==0.28
 
 You can find examples of these update tips in thee following notebooks that you can apply to other notebooks if necessary:
 -[Getting_Started_GPT_3.ipynb)](https://github.com/Denis2054/Transformers-for-NLP-2nd-Edition/blob/main/Chapter07/Getting_Started_GPT_3.ipynb), [Summarizing_with_ChatGPT.ipynb](https://github.com/Denis2054/Transformers-for-NLP-2nd-Edition/blob/main/Chapter09/Summarizing_with_ChatGPT.ipynb), and [Semantic_Role_Labeling_with_ChatGPT.ipynb](https://github.com/Denis2054/Transformers-for-NLP-2nd-Edition/blob/main/Chapter10/Semantic_Role_Labeling_with_ChatGPT.ipynb)
