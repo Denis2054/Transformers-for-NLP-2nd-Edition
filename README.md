@@ -25,10 +25,9 @@ You can run these notebooks on cloud platforms like [Google Colab](https://colab
 December 6,2023 update
 - As of January 4,2024, [OpenAI deprecations](https://platform.openai.com/docs/deprecations) apply to 'davinci'. The recommended replacement is 'davinci-002'
 - Google Colab:  Cohere(language functions) and tiktoken(BPE tokenizer) required to install OpenAI(!pip install tiktoken and !pip install --upgrade cohere)
-- API call changed from openai.Completion.create to openai.completions.create
+- API call changed from openai.Completion.create to openai.completions.create with client= [YOUR OPENAI CLIENT]  
 - API call changed from engine=[model name] to model=[model name]
 - Response print changed from r=response[“choice”][0] \n print(r[“text”]) to print(response.choices[0].text)
-- API Chat completion call changed from openai.ChatCompletion.create to client.chat.completions.create with client= [YOUR OPENAI CLIENT]  
 
 ### Running on a cloud platform or in your environment
 
